@@ -1,0 +1,117 @@
+/* Layout Structure */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: var(--transition);
+    line-height: 1.6;
+}
+
+/* Main Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.container-fluid {
+    padding: 0 var(--spacing-lg);
+}
+
+main {
+    min-height: calc(100vh - 200px);
+}
+
+/* Page Navigation */
+.page {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.page.d-none {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Spacing */
+section {
+    padding: var(--spacing-xxl) 0;
+}
+
+section.compact {
+    padding: var(--spacing-xl) 0;
+}
+
+section.spacious {
+    padding: calc(var(--spacing-xxl) * 1.5) 0;
+}
+
+/* Responsive Padding */
+@media (max-width: 768px) {
+    section {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* Overflow Hidden */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Z-index Management */
+.navbar {
+    z-index: 1000;
+}
+
+.modal {
+    z-index: 2000;
+}
+
+/* Image responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}

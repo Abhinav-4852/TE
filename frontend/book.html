@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip - Trident Escapes</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-compass me-2"></i>Trident Escapes
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary btn-sm navbar-cta ms-2 active" href="book.html">
+                            <i class="fas fa-calendar-check me-1"></i>Book Your Trip
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero Banner -->
+    <div class="hero" style="min-height: 300px;">
+        <div class="hero-content">
+            <h1 class="mb-3">Book Your Adventure</h1>
+            <p class="lead mb-0">Complete Your Booking in Just a Few Steps</p>
+        </div>
+    </div>
+
+    <main>
+        <!-- Booking Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Booking Form -->
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <form id="bookingForm">
+                                    <!-- Personal Information -->
+                                    <div class="mb-4">
+                                        <h5 class="card-title mb-3">
+                                            <i class="fas fa-user text-primary me-2"></i>Personal Information
+                                        </h5>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="firstName" class="form-label">
+                                                    First Name <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="firstName" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="lastName" class="form-label">
+                                                    Last Name <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="lastName" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="email" class="form-label">
+                                                    Email <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="email" class="form-control" id="email" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="phone" class="form-label">
+                                                    Phone <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="tel" class="form-control" id="phone" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-0">
+                                            <label for="nationality" class="form-label">
+                                                Nationality <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="nationality" required>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <!-- Tour Selection -->
+                                    <div class="mb-4">
+                                        <h5 class="card-title mb-3">
+                                            <i class="fas fa-suitcase-rolling text-primary me-2"></i>Tour Selection
+                                        </h5>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="package" class="form-label">
+                                                    Select Package <span class="text-danger">*</span>
+                                                </label>
+                                                <select class="form-select" id="package" required onchange="updatePackageDetails()">
+                                                    <option value="">Choose a package...</option>
+                                                    <option value="golden-triangle" data-price="599">Golden Triangle - $599</option>
+                                                    <option value="golden-triangle-rishikesh" data-price="799">Golden Triangle + Rishikesh - $799</option>
+                                                    <option value="golden-triangle-rajasthan" data-price="999">Golden Triangle + Rajasthan - $999</option>
+                                                    <option value="golden-triangle-varanasi" data-price="899">Golden Triangle + Varanasi - $899</option>
+                                                    <option value="northeast-adventure" data-price="1199">Northeast India Adventure - $1,199</option>
+                                                    <option value="kerala" data-price="649">Kerala Backwaters & Beaches - $649</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="startDate" class="form-label">
+                                                    Start Date <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="date" class="form-control" id="startDate" required onchange="calculateTotal()">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-0">
+                                                <label for="travelers" class="form-label">
+                                                    Number of Travelers <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="number" class="form-control" id="travelers" min="1" value="1" required onchange="calculateTotal()">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <!-- Accommodation -->
+                                    <div class="mb-4">
+                                        <h5 class="card-title mb-3">
+                                            <i class="fas fa-bed text-primary me-2"></i>Accommodation Preference
+                                        </h5>
+                                        
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="radio" name="accommodation" id="budget" value="budget" checked onchange="calculateTotal()">
+                                            <label class="form-check-label" for="budget">
+                                                <strong>Budget</strong> - Standard 3-star hotels <span class="text-muted small">(No extra charge)</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="radio" name="accommodation" id="standard" value="standard" onchange="calculateTotal()">
+                                            <label class="form-check-label" for="standard">
+                                                <strong>Standard</strong> - 4-star hotels <span class="text-muted small">(+$50 per night)</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-0">
+                                            <input class="form-check-input" type="radio" name="accommodation" id="luxury" value="luxury" onchange="calculateTotal()">
+                                            <label class="form-check-label" for="luxury">
+                                                <strong>Luxury</strong> - 5-star resorts <span class="text-muted small">(+$100 per night)</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <!-- Add-ons -->
+                                    <div class="mb-4">
+                                        <h5 class="card-title mb-3">
+                                            <i class="fas fa-plus-circle text-primary me-2"></i>Optional Add-ons
+                                        </h5>
+                                        
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="insurance" value="100" onchange="calculateTotal()">
+                                            <label class="form-check-label" for="insurance">
+                                                Travel Insurance <span class="text-muted small">(+$100)</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="photography" value="50" onchange="calculateTotal()">
+                                            <label class="form-check-label" for="photography">
+                                                Professional Photography <span class="text-muted small">(+$50)</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-0">
+                                            <input class="form-check-input" type="checkbox" id="meals" value="150" onchange="calculateTotal()">
+                                            <label class="form-check-label" for="meals">
+                                                Premium Meals Upgrade <span class="text-muted small">(+$150)</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <!-- Special Requests -->
+                                    <div class="mb-4">
+                                        <label for="specialRequests" class="form-label">
+                                            Special Requests
+                                        </label>
+                                        <textarea class="form-control" id="specialRequests" rows="3" placeholder="Let us know about any special requirements or preferences..."></textarea>
+                                    </div>
+
+                                    <!-- Terms & Conditions -->
+                                    <div class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" id="terms" required>
+                                        <label class="form-check-label" for="terms">
+                                            I agree to the <a href="#" class="text-primary text-decoration-none">Terms & Conditions</a> and <a href="#" class="text-primary text-decoration-none">Privacy Policy</a> <span class="text-danger">*</span>
+                                        </label>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <i class="fas fa-check-circle me-2"></i>Complete Booking
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Summary Sidebar -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm sticky-top" style="top: 80px;">
+                            <div class="card-body p-4">
+                                <h5 class="card-title mb-4">
+                                    <i class="fas fa-receipt text-primary me-2"></i>Booking Summary
+                                </h5>
+
+                                <div class="summary-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                                    <span class="text-muted">Package Price:</span>
+                                    <span class="fw-semibold">$<span id="summaryPackagePrice">0</span></span>
+                                </div>
+
+                                <div class="summary-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                                    <span class="text-muted">Number of Travelers:</span>
+                                    <span class="fw-semibold"><span id="summaryTravelers">1</span> person</span>
+                                </div>
+
+                                <div class="summary-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                                    <span class="text-muted">Base Subtotal:</span>
+                                    <span class="fw-semibold">$<span id="summarySubtotal">0</span></span>
+                                </div>
+
+                                <div id="accommodationSummary" class="summary-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom" style="display:none;">
+                                    <span class="text-muted">Accommodation Upgrade:</span>
+                                    <span class="fw-semibold text-accent">$<span id="summaryAccommodation">0</span></span>
+                                </div>
+
+                                <div id="addonsSummary" class="summary-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom" style="display:none;">
+                                    <span class="text-muted">Add-ons:</span>
+                                    <span class="fw-semibold text-accent">$<span id="summaryAddons">0</span></span>
+                                </div>
+
+                                <div class="summary-total d-flex justify-content-between align-items-center py-3 bg-light px-3 rounded mb-4">
+                                    <span class="fw-bold">Total Amount:</span>
+                                    <span class="h4 text-primary fw-bold mb-0">$<span id="summaryTotal">0</span></span>
+                                </div>
+
+                                <div class="alert alert-info mb-3">
+                                    <small><i class="fas fa-info-circle me-2"></i>Payment methods available at checkout</small>
+                                </div>
+
+                                <button class="btn btn-outline-secondary w-100 mb-2" data-bs-toggle="modal" data-bs-target="#termsModal">
+                                    <i class="fas fa-file-contract me-2"></i>View Terms & Conditions
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Terms Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Terms & Conditions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>1. Booking & Payment</h6>
+                    <p class="text-muted text-sm">Deposits are required at the time of booking. Full payment is due 30 days prior to departure.</p>
+                    
+                    <h6>2. Cancellation Policy</h6>
+                    <p class="text-muted text-sm">Cancellations made 30+ days before departure receive a full refund. Less notice may incur fees.</p>
+                    
+                    <h6>3. Travel Insurance</h6>
+                    <p class="text-muted text-sm">We highly recommend purchasing travel insurance to protect your investment.</p>
+                    
+                    <h6>4. Health & Safety</h6>
+                    <p class="text-muted text-sm">Travelers must comply with all health, safety, and vaccination requirements for the destination.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">
+                        <i class="fas fa-compass text-primary me-2"></i>Trident Escapes
+                    </h5>
+                    <p class="text-muted small mb-3">Address Line 1, City, State - 123456</p>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2">
+                            <a href="tel:+18001234567" class="text-muted text-decoration-none">
+                                <i class="fas fa-phone me-2"></i>+1 (800) 123-4567
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@tridentescapes.com" class="text-muted text-decoration-none">
+                                <i class="fas fa-envelope me-2"></i>info@tridentescapes.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Pages</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">Packages</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-muted text-decoration-none">Gallery</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Tour Packages</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">Golden Triangle</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Rishikesh</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Rajasthan</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Varanasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Our Services</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Custom Itineraries</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Hotel Booking</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Transportation</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">24/7 Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-top pt-4 mb-4">
+                <div class="text-center mb-4">
+                    <h6 class="text-light mb-3">Follow Us</h6>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="facebook">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="twitter">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="instagram">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="linkedin">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-top pt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="text-muted small mb-0">
+                            &copy; 2024 Trident Escapes. All Rights Reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <small class="text-muted">
+                            <a href="#" class="text-muted text-decoration-none">Privacy Policy</a> | 
+                            <a href="#" class="text-muted text-decoration-none">Terms & Conditions</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Package Details
+        const packageDurations = {
+            'golden-triangle': 5,
+            'golden-triangle-rishikesh': 8,
+            'golden-triangle-rajasthan': 11,
+            'golden-triangle-varanasi': 9,
+            'northeast-adventure': 12,
+            'kerala': 6
+        };
+
+        function updatePackageDetails() {
+            const packageSelect = document.getElementById('package');
+            const selectedOption = packageSelect.options[packageSelect.selectedIndex];
+            const duration = packageDurations[packageSelect.value] || 0;
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            const packageSelect = document.getElementById('package');
+            const travelers = parseInt(document.getElementById('travelers').value) || 1;
+            const accommodation = document.querySelector('input[name="accommodation"]:checked').value;
+            
+            // Get package price
+            const selectedOption = packageSelect.options[packageSelect.selectedIndex];
+            const packagePrice = parseInt(selectedOption.dataset.price) || 0;
+            const duration = packageDurations[packageSelect.value] || 0;
+
+            // Calculate accommodation cost
+            let accommodationCost = 0;
+            if (accommodation === 'standard') {
+                accommodationCost = 50 * duration;
+            } else if (accommodation === 'luxury') {
+                accommodationCost = 100 * duration;
+            }
+
+            // Calculate add-ons
+            let addonsCost = 0;
+            if (document.getElementById('insurance').checked) addonsCost += 100;
+            if (document.getElementById('photography').checked) addonsCost += 50;
+            if (document.getElementById('meals').checked) addonsCost += 150;
+
+            // Calculate totals
+            const baseSubtotal = packagePrice * travelers;
+            const accommodationSubtotal = accommodationCost * travelers;
+            const addonsSubtotal = addonsCost * travelers;
+            const totalAmount = baseSubtotal + accommodationSubtotal + addonsSubtotal;
+
+            // Update summary
+            document.getElementById('summaryPackagePrice').textContent = packagePrice;
+            document.getElementById('summaryTravelers').textContent = travelers;
+            document.getElementById('summarySubtotal').textContent = baseSubtotal.toLocaleString();
+            
+            if (accommodationSubtotal > 0) {
+                document.getElementById('accommodationSummary').style.display = 'flex';
+                document.getElementById('summaryAccommodation').textContent = accommodationSubtotal.toLocaleString();
+            } else {
+                document.getElementById('accommodationSummary').style.display = 'none';
+            }
+
+            if (addonsSubtotal > 0) {
+                document.getElementById('addonsSummary').style.display = 'flex';
+                document.getElementById('summaryAddons').textContent = addonsSubtotal.toLocaleString();
+            } else {
+                document.getElementById('addonsSummary').style.display = 'none';
+            }
+
+            document.getElementById('summaryTotal').textContent = totalAmount.toLocaleString();
+        }
+
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const alert = document.createElement('div');
+            alert.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
+            alert.style.zIndex = '9999';
+            alert.innerHTML = `
+                <strong>Booking Confirmed!</strong> Check your email for confirmation details.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(alert);
+            
+            // Reset form
+            this.reset();
+            calculateTotal();
+            
+            // Remove alert after 5 seconds
+            setTimeout(() => alert.remove(), 5000);
+        });
+
+        // Initialize on page load
+        window.addEventListener('load', function() {
+            calculateTotal();
+        });
+    </script>
+</body>
+</html>

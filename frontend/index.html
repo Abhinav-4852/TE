@@ -4,60 +4,654 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Trident Escapes - Your Gateway to Adventure">
-    <title>Trident Escapes - Home</title>
+    <title>Trident Escapes - Premium Tour Agency</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/navigation.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">Trident Escapes</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/about.html">About</a></li>
-                    <li><a href="pages/destinations.html">Destinations</a></li>
-                    <li><a href="pages/contact.html">Contact</a></li>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-compass me-2"></i>Trident Escapes
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary btn-sm navbar-cta ms-2" href="book.html">
+                            <i class="fas fa-calendar-check me-1"></i>Book Your Trip
+                        </a>
+                    </li>
                 </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="mb-3">Design Your Dream Escape</h1>
+            <p class="lead mb-4">Explore amazing travel experiences around the world with Trident Escapes</p>
+            <a href="book.html" class="btn btn-primary btn-lg">
+                <i class="fas fa-plane me-2"></i>Start Your Adventure
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Welcome to Trident Escapes</h1>
-                <p>Discover amazing travel experiences around the world</p>
-                <button class="cta-button">Start Your Adventure</button>
+        <!-- Trending Destinations -->
+        <section class="py-5">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Trending Destinations</h2>
+                    <p class="text-muted">Explore our most popular tour destinations</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="card h-100">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/400x250?text=Paris" class="card-img-top" alt="Paris, France">
+                                <div class="card-overlay">
+                                    <div class="card-overlay-content">
+                                        <button class="btn btn-primary">Explore</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Paris, France</h5>
+                                <p class="card-text text-muted">Experience the magic of the City of Light with iconic landmarks and world-class cuisine.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary">
+                                        <i class="fas fa-star me-1"></i>4.8
+                                    </span>
+                                    <small class="text-muted">324 reviews</small>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <a href="book.html" class="btn btn-outline-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="card h-100">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/400x250?text=Tokyo" class="card-img-top" alt="Tokyo, Japan">
+                                <div class="card-overlay">
+                                    <div class="card-overlay-content">
+                                        <button class="btn btn-primary">Explore</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Tokyo, Japan</h5>
+                                <p class="card-text text-muted">Dive into the blend of ancient traditions and cutting-edge technology.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary">
+                                        <i class="fas fa-star me-1"></i>4.9
+                                    </span>
+                                    <small class="text-muted">287 reviews</small>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <a href="book.html" class="btn btn-outline-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="card h-100">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/400x250?text=Bali" class="card-img-top" alt="Bali, Indonesia">
+                                <div class="card-overlay">
+                                    <div class="card-overlay-content">
+                                        <button class="btn btn-primary">Explore</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Bali, Indonesia</h5>
+                                <p class="card-text text-muted">Relax on pristine beaches and explore lush rice terraces and temples.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary">
+                                        <i class="fas fa-star me-1"></i>4.7
+                                    </span>
+                                    <small class="text-muted">412 reviews</small>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <a href="book.html" class="btn btn-outline-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="card h-100">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/400x250?text=New+York" class="card-img-top" alt="New York, USA">
+                                <div class="card-overlay">
+                                    <div class="card-overlay-content">
+                                        <button class="btn btn-primary">Explore</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">New York, USA</h5>
+                                <p class="card-text text-muted">The city that never sleeps offers endless entertainment and iconic attractions.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary">
+                                        <i class="fas fa-star me-1"></i>4.6
+                                    </span>
+                                    <small class="text-muted">542 reviews</small>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <a href="book.html" class="btn btn-outline-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="packages.html" class="btn btn-primary btn-lg">
+                        View All Destinations
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section class="features">
+        <!-- Tour Packages -->
+        <section class="py-5 bg-light">
             <div class="container">
-                <h2>Why Choose Us?</h2>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3>Expert Guides</h3>
-                        <p>Experienced professionals leading your journey</p>
+                <div class="section-title text-center">
+                    <h2>Tour Packages</h2>
+                    <p class="text-muted">Choose from our carefully curated tour packages</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="card price-card">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/400x250?text=Golden+Triangle" class="card-img-top" alt="Golden Triangle">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Golden Triangle</h5>
+                                <p class="card-text text-muted small">Explore Delhi, Agra, and Jaipur</p>
+                                
+                                <div class="price-tag mb-3">
+                                    <span class="price-currency">$</span>
+                                    <span class="price-amount">599</span>
+                                    <span class="price-period">per person</span>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <small class="text-primary fw-semibold">
+                                        <i class="fas fa-calendar me-1"></i>5 Days
+                                    </small>
+                                </div>
+                                
+                                <ul class="price-list">
+                                    <li><i class="fas fa-check"></i>3-star accommodation</li>
+                                    <li><i class="fas fa-check"></i>All meals</li>
+                                    <li><i class="fas fa-check"></i>Expert guide</li>
+                                    <li><i class="fas fa-check"></i>Transport</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <a href="book.html" class="btn btn-primary w-100">Book Package</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <h3>Best Prices</h3>
-                        <p>Competitive rates for unforgettable experiences</p>
+
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="card price-card featured">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/400x250?text=Rishikesh" class="card-img-top" alt="Golden Triangle + Rishikesh">
+                                <div class="card-badge"><span class="badge badge-accent">Popular</span></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Golden Triangle + Rishikesh</h5>
+                                <p class="card-text text-muted small">Added adventure and spiritual retreat</p>
+                                
+                                <div class="price-tag mb-3">
+                                    <span class="price-currency">$</span>
+                                    <span class="price-amount">749</span>
+                                    <span class="price-period">per person</span>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <small class="text-primary fw-semibold">
+                                        <i class="fas fa-calendar me-1"></i>7 Days
+                                    </small>
+                                </div>
+                                
+                                <ul class="price-list">
+                                    <li><i class="fas fa-check"></i>4-star accommodation</li>
+                                    <li><i class="fas fa-check"></i>All meals</li>
+                                    <li><i class="fas fa-check"></i>Expert guide</li>
+                                    <li><i class="fas fa-check"></i>Yoga session</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <a href="book.html" class="btn btn-primary w-100">Book Package</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <h3>Safety First</h3>
-                        <p>Your security is our top priority</p>
+
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="card price-card">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/400x250?text=Rajasthan" class="card-img-top" alt="Golden Triangle + Rajasthan">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Golden Triangle + Rajasthan</h5>
+                                <p class="card-text text-muted small">Royal palaces and desert experience</p>
+                                
+                                <div class="price-tag mb-3">
+                                    <span class="price-currency">$</span>
+                                    <span class="price-amount">899</span>
+                                    <span class="price-period">per person</span>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <small class="text-primary fw-semibold">
+                                        <i class="fas fa-calendar me-1"></i>9 Days
+                                    </small>
+                                </div>
+                                
+                                <ul class="price-list">
+                                    <li><i class="fas fa-check"></i>5-star accommodation</li>
+                                    <li><i class="fas fa-check"></i>All meals</li>
+                                    <li><i class="fas fa-check"></i>Expert guide</li>
+                                    <li><i class="fas fa-check"></i>Desert safari</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <a href="book.html" class="btn btn-primary w-100">Book Package</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="card price-card">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/400x250?text=Varanasi" class="card-img-top" alt="Golden Triangle + Varanasi">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Golden Triangle + Varanasi</h5>
+                                <p class="card-text text-muted small">Spiritual journey on the Ganges</p>
+                                
+                                <div class="price-tag mb-3">
+                                    <span class="price-currency">$</span>
+                                    <span class="price-amount">799</span>
+                                    <span class="price-period">per person</span>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <small class="text-primary fw-semibold">
+                                        <i class="fas fa-calendar me-1"></i>8 Days
+                                    </small>
+                                </div>
+                                
+                                <ul class="price-list">
+                                    <li><i class="fas fa-check"></i>4-star accommodation</li>
+                                    <li><i class="fas fa-check"></i>All meals</li>
+                                    <li><i class="fas fa-check"></i>Expert guide</li>
+                                    <li><i class="fas fa-check"></i>Boat cruise</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <a href="book.html" class="btn btn-primary w-100">Book Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="py-5">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Our Services</h2>
+                    <p class="text-muted">Complete travel solutions for unforgettable experiences</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h4 class="card-title">Custom Itineraries</h4>
+                            <p class="card-text text-muted">Create your own personalized travel plan tailored to your preferences</p>
+                            <a href="#" class="text-primary fw-semibold small">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+                            <h4 class="card-title">Hotel Booking</h4>
+                            <p class="card-text text-muted">Access to premium hotels and accommodations at competitive prices</p>
+                            <a href="#" class="text-primary fw-semibold small">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h4 class="card-title">Transportation</h4>
+                            <p class="card-text text-muted">Comfortable and reliable transport arrangements throughout your journey</p>
+                            <a href="#" class="text-primary fw-semibold small">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4 class="card-title">Food Services</h4>
+                            <p class="card-text text-muted">Authentic local cuisine and dining experiences at select restaurants</p>
+                            <a href="#" class="text-primary fw-semibold small">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <h4 class="card-title">Photography Tours</h4>
+                            <p class="card-text text-muted">Capture the best moments with expert photography guidance</p>
+                            <a href="#" class="text-primary fw-semibold small">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-life-ring"></i>
+                            </div>
+                            <h4 class="card-title">24/7 Support</h4>
+                            <p class="card-text text-muted">Round-the-clock customer support for peace of mind during travel</p>
+                            <a href="#" class="text-primary fw-semibold small">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-5 bg-primary-light">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Why Choose Trident Escapes?</h2>
+                    <p class="text-muted">We provide the best travel experiences with exceptional service</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-primary" style="font-size: 3rem;"></i>
+                            </div>
+                            <div class="mb-2">
+                                <span class="h2 text-primary fw-bold">15+</span>
+                            </div>
+                            <h5 class="card-title mb-2">Years of Experience</h5>
+                            <p class="text-muted">Over a decade and a half of crafting memorable travel experiences</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-users text-primary" style="font-size: 3rem;"></i>
+                            </div>
+                            <div class="mb-2">
+                                <span class="h2 text-primary fw-bold">50K+</span>
+                            </div>
+                            <h5 class="card-title mb-2">Happy Travelers</h5>
+                            <p class="text-muted">Thousands of satisfied customers who trust us with their adventures</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-globe text-primary" style="font-size: 3rem;"></i>
+                            </div>
+                            <div class="mb-2">
+                                <span class="h2 text-primary fw-bold">100+</span>
+                            </div>
+                            <h5 class="card-title mb-2">Destinations</h5>
+                            <p class="text-muted">Access to over a hundred amazing destinations worldwide</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-award text-primary" style="font-size: 3rem;"></i>
+                            </div>
+                            <div class="mb-2">
+                                <span class="h2 text-primary fw-bold">8/10</span>
+                            </div>
+                            <h5 class="card-title mb-2">Rating</h5>
+                            <p class="text-muted">Consistently rated highly for service quality and customer satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <p class="lead text-muted mb-4">We're committed to making your journey unforgettable</p>
+                    <a href="book.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-check me-2"></i>Start Booking Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Frequently Asked Questions</h2>
+                    <p class="text-muted">Find answers to common questions about our tours and services</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                        <i class="fas fa-question-circle me-3 text-primary"></i>What is included in a tour package?
+                                    </button>
+                                </h2>
+                                <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="text-muted mb-0">Our tour packages typically include accommodation, meals, guided tours, transportation, and entrance fees to major attractions. Specific inclusions vary by package.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                        <i class="fas fa-question-circle me-3 text-primary"></i>How can I book a tour?
+                                    </button>
+                                </h2>
+                                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="text-muted mb-0">You can book a tour through our website using the booking form, or contact our team directly. We also accept phone and email bookings for your convenience.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                        <i class="fas fa-question-circle me-3 text-primary"></i>What is your cancellation policy?
+                                    </button>
+                                </h2>
+                                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="text-muted mb-0">We offer flexible cancellation policies. Cancellations made 30 days before travel receive a full refund. Less notice may incur cancellation fees.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                        <i class="fas fa-question-circle me-3 text-primary"></i>Do you offer customized itineraries?
+                                    </button>
+                                </h2>
+                                <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="text-muted mb-0">Yes! We specialize in creating custom itineraries tailored to your preferences, interests, and budget. Contact our team to discuss your specific needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
         <div class="container">
-            <p>&copy; 2024 Trident Escapes. All rights reserved.</p>
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">
+                        <i class="fas fa-compass text-primary me-2"></i>Trident Escapes
+                    </h5>
+                    <p class="text-muted small mb-3">Address Line 1, City, State - 123456</p>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2">
+                            <a href="tel:+18001234567" class="text-muted text-decoration-none">
+                                <i class="fas fa-phone me-2"></i>+1 (800) 123-4567
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@tridentescapes.com" class="text-muted text-decoration-none">
+                                <i class="fas fa-envelope me-2"></i>info@tridentescapes.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Pages</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">Packages</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-muted text-decoration-none">Gallery</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Tour Packages</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">Golden Triangle</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Rishikesh</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Rajasthan</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Varanasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Our Services</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Custom Itineraries</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Hotel Booking</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Transportation</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">24/7 Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-top pt-4 mb-4">
+                <div class="text-center mb-4">
+                    <h6 class="text-light mb-3">Follow Us</h6>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="facebook">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="twitter">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="instagram">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="linkedin">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-top pt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="text-muted small mb-0">
+                            &copy; 2024 Trident Escapes. All Rights Reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <small class="text-muted">
+                            <a href="#" class="text-muted text-decoration-none">Privacy Policy</a> | 
+                            <a href="#" class="text-muted text-decoration-none">Terms & Conditions</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

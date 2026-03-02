@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Trident Escapes</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-compass me-2"></i>Trident Escapes
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary btn-sm navbar-cta ms-2" href="book.html">
+                            <i class="fas fa-calendar-check me-1"></i>Book Your Trip
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero Banner -->
+    <div class="hero" style="min-height: 300px;">
+        <div class="hero-content">
+            <h1 class="mb-3">Contact Us</h1>
+            <p class="lead mb-0">Get In Touch - We're Here to Help</p>
+        </div>
+    </div>
+
+    <main>
+        <!-- Contact Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="section-title text-center mb-5">
+                    <h2>Get in Touch With Us</h2>
+                    <p class="text-muted">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Contact Information -->
+                    <div class="col-lg-4">
+                        <div class="mb-5">
+                            <h5 class="mb-3">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>Address
+                            </h5>
+                            <p class="text-muted">
+                                123 Travel Street<br>
+                                Adventure City, AC 12345<br>
+                                United States
+                            </p>
+                        </div>
+
+                        <div class="mb-5">
+                            <h5 class="mb-3">
+                                <i class="fas fa-phone text-primary me-2"></i>Phone
+                            </h5>
+                            <p class="text-muted">
+                                <a href="tel:+18001234567" class="text-decoration-none">
+                                    +1 (800) 123-4567
+                                </a><br>
+                                <span class="small">Available 24/7</span>
+                            </p>
+                        </div>
+
+                        <div class="mb-5">
+                            <h5 class="mb-3">
+                                <i class="fas fa-envelope text-primary me-2"></i>Email
+                            </h5>
+                            <p class="text-muted">
+                                <a href="mailto:info@tridentescapes.com" class="text-decoration-none">
+                                    info@tridentescapes.com
+                                </a><br>
+                                <a href="mailto:support@tridentescapes.com" class="text-decoration-none">
+                                    support@tridentescapes.com
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="mb-0">
+                            <h5 class="mb-3">
+                                <i class="fas fa-clock text-primary me-2"></i>Business Hours
+                            </h5>
+                            <p class="text-muted">
+                                Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 10:00 AM - 4:00 PM<br>
+                                Sunday: Closed<br>
+                                <span class="small text-primary">24/7 Emergency Support Available</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <form id="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName" class="form-label">
+                                                First Name <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName" class="form-label">
+                                                Last Name <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="email" class="form-label">
+                                                Email <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="email" class="form-control" id="email" name="email" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="phone" class="form-label">
+                                                Phone <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">
+                                            Subject <span class="text-danger">*</span>
+                                        </label>
+                                        <select class="form-select" id="subject" name="subject" required>
+                                            <option value="">Select a subject...</option>
+                                            <option value="booking">Booking Inquiry</option>
+                                            <option value="custom">Custom Itinerary</option>
+                                            <option value="feedback">Feedback</option>
+                                            <option value="support">Customer Support</option>
+                                            <option value="partnership">Partnership Opportunity</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">
+                                            Message <span class="text-danger">*</span>
+                                        </label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us about your travel dreams..." required></textarea>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                                        <label class="form-check-label" for="privacy">
+                                            I agree to the <a href="#" class="text-primary text-decoration-none">Privacy Policy</a> and <a href="#" class="text-primary text-decoration-none">Terms of Service</a>
+                                        </label>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="section-title text-center mb-4">
+                    <h2>Our Location</h2>
+                </div>
+                <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.8851852768584!2d77.21438!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfcc82eb5a8dd%3A0x4c45ecc76eff48f5!2sIndia%20Gate!5e0!3m2!1sen!2sus!4v1234567890" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">
+                        <i class="fas fa-compass text-primary me-2"></i>Trident Escapes
+                    </h5>
+                    <p class="text-muted small mb-3">Address Line 1, City, State - 123456</p>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2">
+                            <a href="tel:+18001234567" class="text-muted text-decoration-none">
+                                <i class="fas fa-phone me-2"></i>+1 (800) 123-4567
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@tridentescapes.com" class="text-muted text-decoration-none">
+                                <i class="fas fa-envelope me-2"></i>info@tridentescapes.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Pages</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">Packages</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-muted text-decoration-none">Gallery</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Tour Packages</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">Golden Triangle</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Rishikesh</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Rajasthan</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Varanasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Our Services</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Custom Itineraries</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Hotel Booking</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Transportation</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">24/7 Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-top pt-4 mb-4">
+                <div class="text-center mb-4">
+                    <h6 class="text-light mb-3">Follow Us</h6>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="facebook">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="twitter">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="instagram">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="linkedin">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-top pt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="text-muted small mb-0">
+                            &copy; 2024 Trident Escapes. All Rights Reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <small class="text-muted">
+                            <a href="#" class="text-muted text-decoration-none">Privacy Policy</a> | 
+                            <a href="#" class="text-muted text-decoration-none">Terms & Conditions</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Handle Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            const alert = document.createElement('div');
+            alert.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
+            alert.style.zIndex = '9999';
+            alert.innerHTML = `
+                <strong>Success!</strong> Thank you for your message. We'll get back to you soon.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(alert);
+            
+            // Reset form
+            this.reset();
+            
+            // Remove alert after 5 seconds
+            setTimeout(() => alert.remove(), 5000);
+        });
+    </script>
+</body>
+</html>

@@ -1,174 +1,393 @@
 # Trident Escapes Website
 
-A complete full-stack web application for Trident Escapes - an adventure travel and escape experiences platform.
+A complete full-stack web application for Trident Escapes tour agency built with Bootstrap 5 frontend and Node.js/Express backend.
 
-## Project Structure
+## 🚀 Quick Start
+
+### Frontend Only (No Setup Required!)
+1. Open `frontend/index.html` directly in your browser
+2. Everything works immediately - no build process!
+
+### Full Stack Development
+Follow the installation steps below for both frontend and backend.
+
+## 📋 Project Structure
 
 ```
-Trident Escapes Website/
-├── frontend/                    # Frontend static files
-│   ├── index.html              # Main landing page
-│   ├── pages/                  # Additional pages
-│   │   ├── about.html
-│   │   ├── destinations.html
-│   │   └── contact.html
-│   ├── css/                    # Stylesheets
-│   │   └── style.css
-│   ├── js/                     # Client-side JavaScript
-│   │   └── main.js
-│   ├── images/                 # Image assets
-│   └── assets/                 # Other assets (fonts, icons, etc.)
+TE/
+├── frontend/                         # Bootstrap 5 + Vanilla JS
+│   ├── index.html                   # Main entry point
+│   ├── README.md                    # Frontend docs
+│   ├── css/
+│   │   ├── variables.css           # Design tokens
+│   │   ├── layout.css              # Grid & layout
+│   │   ├── components.css          # Component styles
+│   │   ├── hero.css                # Hero styles
+│   │   ├── cards.css               # Card styles
+│   │   ├── navigation.css          # Navbar styles
+│   │   └── style.css               # Utilities
+│   ├── js/
+│   │   ├── main.js                 # App initialization
+│   │   ├── router.js               # SPA routing
+│   │   └── components/
+│   │       ├── navbar.js
+│   │       ├── hero.js
+│   │       ├── trending.js
+│   │       ├── packages.js
+│   │       ├── services.js
+│   │       ├── whychoose.js
+│   │       ├── team.js
+│   │       ├── faq.js
+│   │       ├── footer.js
+│   │       └── pages/
+│   │           ├── about.js
+│   │           ├── packages.js
+│   │           ├── gallery.js
+│   │           ├── contact.js
+│   │           └── book.js
+│   └── assets/
+│       └── images/
 │
-├── backend/                     # Node.js/Express backend
-│   ├── server.js               # Main server file
-│   ├── package.json            # Dependencies and scripts
-│   ├── .env.example            # Environment variables template
-│   ├── config/                 # Configuration files
-│   │   ├── constants.js
-│   │   └── database.js
-│   ├── routes/                 # API route handlers
-│   ├── controllers/            # Business logic
-│   ├── middleware/             # Custom middleware
-│   ├── models/                 # Data models
-│   ├── utils/                  # Utility functions
-│   └── public/                 # Static files served by backend
+├── backend/                          # Node.js/Express API
+│   ├── server.js
+│   ├── package.json
+│   ├── config/
+│   ├── routes/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── utils/
+│   └── public/
 │
-├── docs/                        # Documentation
-├── .gitignore                   # Git ignore rules
-├── .env.example                 # Environment variables template
-└── README.md                    # This file
+├── docs/
+│   ├── API.md
+│   ├── BACKEND.md
+│   ├── FRONTEND.md                  # ← Frontend guide
+│   ├── QUICKSTART.md
+│   └── README.md
+└── README.md                         # This file
 ```
 
-## Getting Started
+## ✨ Frontend Features
+
+- ✅ **Responsive Bootstrap 5** - Mobile-first design
+- ✅ **Modular Components** - Reusable, maintainable code
+- ✅ **Client-Side Routing** - SPA navigation without page reloads
+- ✅ **6 Complete Pages**:
+  - Home (Hero, Trending, Packages, Services, Why Choose Us, Team, FAQ)
+  - About Us
+  - Tour Packages (with filters)
+  - Photo Gallery (with categories)
+  - Contact Us (with form)
+  - Book Trip (with dynamic pricing)
+- ✅ **Rich Components**:
+  - Sticky Navigation
+  - Hero Banner with Animations
+  - Card Layouts
+  - Accordion FAQ
+  - Contact Forms
+  - Booking Calculator
+  - Photo Gallery with Lightbox
+- ✅ **Zero Dependencies** - Just HTML, CSS, and JavaScript!
+
+## 🛠️ Getting Started
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-- A modern web browser
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Optional: Node.js for backend development
 
-### Installation
+### Frontend (Quick)
+
+**Method 1: Direct Browser**
+```bash
+# Simply open the file
+open frontend/index.html
+
+# Or drag to browser window
+```
+
+**Method 2: Local Server**
+```bash
+cd frontend
+# Python 3
+python -m http.server 8000
+
+# Or Python 2
+python -m SimpleHTTPServer 8000
+```
+Then visit `http://localhost:8000`
+
+### Full Stack Setup
 
 #### Backend Setup
 
-1. Navigate to the backend directory:
 ```bash
 cd backend
-```
-
-2. Install dependencies:
-```bash
 npm install
 ```
 
-3. Create a `.env` file based on `.env.example`:
-```bash
-cp .env.example .env
-```
-
-4. Update the `.env` file with your configuration settings.
-
-5. Start the development server:
-```bash
-npm run dev
-```
-
-The backend API will be available at `http://localhost:3000`
-
-#### Frontend Setup
-
-1. The frontend is a static website. You can serve it using:
-
-**Option 1: Using Python**
-```bash
-cd frontend
-python -m http.server 8080
-```
-
-**Option 2: Using any simple HTTP server**
-Access the frontend by navigating to `http://localhost:8080` or open `frontend/index.html` directly in your browser.
-
-## Features
-
-- **Responsive Design**: Mobile-friendly layout
-- **Modern UI**: Clean and professional interface
-- **API Integration**: Connected to Node.js/Express backend
-- **Easy to Extend**: Well-organized code structure
-- **Multiple Pages**: Home, About, Destinations, Contact
-
-## Available API Endpoints
-
-- `GET /api/health` - Server health check
-
-## Configuration
-
-### Environment Variables
-
-Copy `.env.example` to `.env` and update with your configuration:
-
+Create `.env` file:
 ```env
 PORT=3000
 NODE_ENV=development
-DB_HOST=localhost
-DB_NAME=trident_escapes
-CORS_ORIGIN=http://localhost:8080
 ```
 
-## Scripts
+Start backend:
+```bash
+npm start      # Production
+npm run dev    # Development with auto-reload
+```
 
-### Backend
-- `npm start` - Run the production server
-- `npm run dev` - Run the development server with auto-reload
-- `npm test` - Run tests
+Backend API: `http://localhost:3000`
 
-## Technologies Used
+#### Frontend Setup
+
+In a new terminal:
+```bash
+cd frontend
+python -m http.server 8000
+```
+
+Frontend: `http://localhost:8000`
+
+## 🎨 Design System
+
+### Color Palette
+- **Primary**: #0066cc (Blue)
+- **Secondary**: #00a8e8 (Light Blue)
+- **Accent**: #ff6b35 (Orange)
+- **Dark**: #1a1a1a
+- **Light**: #f5f5f5
+
+### Spacing Scale
+xs (4px) → sm (8px) → md (16px) → lg (24px) → xl (32px) → xxl (48px)
+
+### Typography
+Mobile-first responsive sizing from xs to xxxl
+
+## 🗂️ Pages & Routes
+
+### Navigation Structure
+- **Home** (`#home-page`) - Main landing page
+- **About** (`#about-page`) - Company information
+- **Packages** (`#packages-page`) - Tour packages with filters
+- **Gallery** (`#gallery-page`) - Photo gallery with categories
+- **Contact** (`#contact-page`) - Contact form and info
+- **Book** (`#book-page`) - Booking system with calculator
+
+## 💻 Technology Stack
 
 ### Frontend
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Responsive Grid Layout
+- **Bootstrap 5** - Responsive framework
+- **HTML5** - Semantic markup
+- **CSS3** - Variables, Grid, Flexbox
+- **Vanilla JavaScript** - No frameworks/dependencies
+- **Font Awesome 6** - Icons (CDN)
 
 ### Backend
-- Node.js
-- Express.js
-- Helmet (security)
-- CORS
-- Dotenv (environment management)
+- **Node.js** - Runtime
+- **Express** - Web framework
+- **Dotenv** - Environment management
+- **CORS** - Cross-origin support
+- **Helmet** - Security
 
-## Development
+## 📱 Browser Support
 
-### Adding New Pages
+| Browser | Support |
+|---------|---------|
+| Chrome | Latest ✅ |
+| Firefox | Latest ✅ |
+| Safari | Latest ✅ |
+| Edge | Latest ✅ |
+| Mobile | Latest ✅ |
 
-1. Create a new HTML file in `frontend/pages/`
-2. Update navigation links in all HTML files
-3. Add corresponding styles in `frontend/css/style.css`
+## 🎯 Features Detail
 
-### Adding API Endpoints
+### Home Page
+Showcase multiple components on one page:
+- Full-screen hero with CTA
+- Trending destinations carousel
+- Tour packages with pricing
+- Service highlights
+- Why choose us stats
+- Team member cards
+- FAQ accordion
+- Contact footer
 
-1. Create route files in `backend/routes/`
-2. Create corresponding controllers in `backend/controllers/`
-3. Import and use in `backend/server.js`
+### About Page
+- Company story and history
+- Mission statement
+- Core values
+- Team strengths
 
-## Deployment
+### Packages Page
+- All packages listed
+- Duration-based filtering
+- Rating and reviews
+- Price breakdown
+- "Book Now" integration
 
-### Deploy Backend
-- Use services like Heroku, Railway, or AWS
-- Set environment variables on your hosting platform
-- Run `npm start`
+### Gallery Page
+- Photo grid layout
+- Category filters (monuments, nature, adventure, culture)
+- Lightbox viewer
+- Responsive image grid
+
+### Contact Page
+- Contact form with validation
+- Business information
+- Operating hours
+- Map embed
+- Success notification
+
+### Booking Page
+- Package selection
+- Date picker
+- Traveler count input
+- Accommodation tier selection
+- Add-ons (insurance, photography, meals)
+- Real-time price calculation
+- Booking summary sidebar
+- Form submission
+
+## 🔧 Extensibility
+
+### Add New Component
+```javascript
+// Create: js/components/mycomponent.js
+const MyComponent = {
+    init() {
+        this.render();
+    },
+    render() {
+        const html = `<!-- markup -->`;
+        document.querySelector('#my-container').innerHTML = html;
+    }
+};
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    MyComponent.init();
+});
+```
+
+### Add New Page
+1. Create `js/components/pages/mypage.js`
+2. Add container: `<div id="my-page" class="page d-none"></div>`
+3. Include script in `index.html`
+4. Update Router config
+
+## 🚀 Deployment
 
 ### Deploy Frontend
-- Use services like Netlify, Vercel, or GitHub Pages
-- Upload the `frontend` folder contents
-- Ensure backend API URL is configured correctly
+```bash
+# Build for production
+# (No build step needed - just upload files)
 
-## License
+# Upload to:
+# - Netlify (drag & drop)
+# - Vercel (git integration)
+# - GitHub Pages (push to gh-pages)
+# - Any static host
+```
 
-ISC
+### Deploy Backend
+```bash
+# Deploy to:
+# - Heroku
+# - Railway
+# - AWS Lambda
+# - Google Cloud
+# - DigitalOcean
 
-## Support
+# Remember to set environment variables on host
+```
 
-For issues or questions, please contact the development team.
+## 📊 Customization
+
+### Change Theme Colors
+Edit `frontend/css/variables.css`:
+```css
+:root {
+    --primary-color: #your-color;
+    --secondary-color: #your-color;
+    --accent-color: #your-color;
+}
+```
+
+### Update Content
+Edit component data in `frontend/js/components/*.js`:
+```javascript
+packages: [
+    { id: 1, name: 'Your Package', price: 999 }
+]
+```
+
+### Add New Features
+- Modify component structure
+- Add event listeners
+- Call backend APIs
+- Update styles with CSS variables
+
+## 🔌 API Integration
+
+Configure backend URL in `frontend/js/main.js`:
+```javascript
+const API_CONFIG = {
+    baseURL: 'http://localhost:3000/api',
+    timeout: 5000
+};
+```
+
+Use global API service:
+```javascript
+// GET
+APIService.get('/endpoint')
+
+// POST
+APIService.post('/endpoint', { data })
+```
+
+## 📚 Available Utilities
+
+Global utilities in `window.Utils`:
+```javascript
+Utils.formatCurrency(1000)          // $1,000.00
+Utils.formatDate(new Date())        // March 1, 2024
+Utils.isMobile()                    // true/false
+Utils.getQueryParam('param')        // query value
+Utils.debounce(func, 300)          // debounced function
+Utils.throttle(func, 300)          // throttled function
+```
+
+## 🐛 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Components not showing | Check browser console (F12) and container IDs |
+| Styles missing | Clear cache (Ctrl+Shift+Delete), check CSS load |
+| Router not working | Verify `data-nav` attributes, check JS errors |
+| API errors | Check backend is running, verify API URL |
+
+## 📖 Documentation
+
+- [Frontend Guide](docs/FRONTEND.md) - Component architecture, usage
+- [Backend Guide](docs/BACKEND.md) - API routes, setup
+- [Quick Start](docs/QUICKSTART.md) - Get running in 5 minutes
+- [API Documentation](docs/API.md) - Endpoint reference
+
+## 📝 License
+
+© 2024 Trident Escapes. All Rights Reserved.
+
+## 📞 Support & Contact
+
+- **Email**: info@tridentescapes.com
+- **Phone**: +1 (800) 123-4567
+- **Hours**: Mon-Fri 9AM-6PM, Sat 10AM-4PM
 
 ---
 
-**Last Updated**: February 28, 2024
+**Version**: 1.0.0  
+**Last Updated**: March 1, 2024  
+**Maintained By**: Trident Escapes Development Team

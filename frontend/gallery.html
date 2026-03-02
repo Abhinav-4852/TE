@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Trident Escapes</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-compass me-2"></i>Trident Escapes
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary btn-sm navbar-cta ms-2" href="book.html">
+                            <i class="fas fa-calendar-check me-1"></i>Book Your Trip
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero Banner -->
+    <div class="hero" style="min-height: 300px;">
+        <div class="hero-content">
+            <h1 class="mb-3">Photo Gallery</h1>
+            <p class="lead mb-0">Explore Beautiful Moments From Our Tours</p>
+        </div>
+    </div>
+
+    <main>
+        <!-- Gallery Section -->
+        <section class="py-5">
+            <div class="container">
+                <!-- Filter Buttons -->
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <div class="text-center mb-4">
+                            <h2 class="mb-4">Our Gallery</h2>
+                            <div class="filter-buttons">
+                                <button class="btn btn-outline-primary me-2 mb-2 gallery-filter active" data-filter="all">
+                                    All
+                                </button>
+                                <button class="btn btn-outline-primary me-2 mb-2 gallery-filter" data-filter="monuments">
+                                    <i class="fas fa-gopuram me-1"></i>Monuments
+                                </button>
+                                <button class="btn btn-outline-primary me-2 mb-2 gallery-filter" data-filter="nature">
+                                    <i class="fas fa-tree me-1"></i>Nature
+                                </button>
+                                <button class="btn btn-outline-primary me-2 mb-2 gallery-filter" data-filter="adventure">
+                                    <i class="fas fa-mountain me-1"></i>Adventure
+                                </button>
+                                <button class="btn btn-outline-primary mb-2 gallery-filter" data-filter="culture">
+                                    <i class="fas fa-users me-1"></i>Culture
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="row g-4 gallery-grid">
+                    <!-- Monuments -->
+                    <div class="col-sm-6 col-lg-4 gallery-item" data-category="monuments">
+                        <div class="card overflow-hidden cursor-pointer" onclick="openLightbox('https://via.placeholder.com/600x400?text=Taj+Mahal', 'Taj Mahal')">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/600x400?text=Taj+Mahal" class="card-img-top" alt="Taj Mahal">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title mb-0">Taj Mahal</h6>
+                                <small class="text-muted">Agra</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 gallery-item" data-category="monuments">
+                        <div class="card overflow-hidden cursor-pointer" onclick="openLightbox('https://via.placeholder.com/600x400?text=Red+Fort', 'Red Fort')">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/600x400?text=Red+Fort" class="card-img-top" alt="Red Fort">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title mb-0">Red Fort</h6>
+                                <small class="text-muted">Delhi</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 gallery-item" data-category="monuments">
+                        <div class="card overflow-hidden cursor-pointer" onclick="openLightbox('https://via.placeholder.com/600x400?text=City+Palace', 'City Palace')">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/600x400?text=City+Palace" class="card-img-top" alt="City Palace">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title mb-0">City Palace</h6>
+                                <small class="text-muted">Jaipur</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nature -->
+                    <div class="col-sm-6 col-lg-4 gallery-item" data-category="nature">
+                        <div class="card overflow-hidden cursor-pointer" onclick="openLightbox('https://via.placeholder.com/600x400?text=Mountain+Sunrise', 'Mountain Sunrise')">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/600x400?text=Mountain+Sunrise" class="card-img-top" alt="Mountain Sunrise">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title mb-0">Mountain Sunrise</h6>
+                                <small class="text-muted">Himalayas</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 gallery-item" data-category="nature">
+                        <div class="card overflow-hidden cursor-pointer" onclick="openLightbox('https://via.placeholder.com/600x400?text=Forest+Trail', 'Forest Trail')">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/600x400?text=Forest+Trail" class="card-img-top" alt="Forest Trail">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title mb-0">Forest Trail</h6>
+                                <small class="text-muted">Kerala</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 gallery-item" data-category="nature">
+                        <div class="card overflow-hidden cursor-pointer" onclick="openLightbox('https://via.placeholder.com/600x400?text=Rice+Terraces', 'Rice Terraces')">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/600x400?text=Rice+Terraces" class="card-img-top" alt="Rice Terraces">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title mb-0">Rice Terraces</h6>
+                                <small class="text-muted">Bangladesh</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Adventure -->
+                    <div class="col-sm-6 col-lg-4 gallery-item" data-category="adventure">
+                        <div class="card overflow-hidden cursor-pointer" onclick="openLightbox('https://via.placeholder.com/600x400?text=Rock+Climbing', 'Rock Climbing')">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/600x400?text=Rock+Climbing" class="card-img-top" alt="Rock Climbing">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title mb-0">Rock Climbing</h6>
+                                <small class="text-muted">Adventure</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 gallery-item" data-category="adventure">
+                        <div class="card overflow-hidden cursor-pointer" onclick="openLightbox('https://via.placeholder.com/600x400?text=Whitewater+Rafting', 'Whitewater Rafting')">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/600x400?text=Whitewater+Rafting" class="card-img-top" alt="Whitewater Rafting">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title mb-0">Whitewater Rafting</h6>
+                                <small class="text-muted">Adventure</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Culture -->
+                    <div class="col-sm-6 col-lg-4 gallery-item" data-category="culture">
+                        <div class="card overflow-hidden cursor-pointer" onclick="openLightbox('https://via.placeholder.com/600x400?text=Local+Festival', 'Local Festival')">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="https://via.placeholder.com/600x400?text=Local+Festival" class="card-img-top" alt="Local Festival">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title mb-0">Local Festival</h6>
+                                <small class="text-muted">Culture</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="lightboxModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-white" id="lightboxTitle"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <img id="lightboxImage" src="" class="img-fluid" alt="" style="max-height: 80vh;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">
+                        <i class="fas fa-compass text-primary me-2"></i>Trident Escapes
+                    </h5>
+                    <p class="text-muted small mb-3">Address Line 1, City, State - 123456</p>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2">
+                            <a href="tel:+18001234567" class="text-muted text-decoration-none">
+                                <i class="fas fa-phone me-2"></i>+1 (800) 123-4567
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@tridentescapes.com" class="text-muted text-decoration-none">
+                                <i class="fas fa-envelope me-2"></i>info@tridentescapes.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Pages</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">Packages</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-muted text-decoration-none">Gallery</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Tour Packages</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">Golden Triangle</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Rishikesh</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Rajasthan</a></li>
+                        <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">With Varanasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="mb-3">Our Services</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Custom Itineraries</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Hotel Booking</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Transportation</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">24/7 Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-top pt-4 mb-4">
+                <div class="text-center mb-4">
+                    <h6 class="text-light mb-3">Follow Us</h6>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="facebook">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="twitter">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="instagram">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none hover-translate" title="linkedin">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-top pt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="text-muted small mb-0">
+                            &copy; 2024 Trident Escapes. All Rights Reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <small class="text-muted">
+                            <a href="#" class="text-muted text-decoration-none">Privacy Policy</a> | 
+                            <a href="#" class="text-muted text-decoration-none">Terms & Conditions</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Gallery Filtering
+        document.querySelectorAll('.gallery-filter').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                document.querySelectorAll('.gallery-filter').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter items
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox
+        function openLightbox(src, title) {
+            document.getElementById('lightboxImage').src = src;
+            document.getElementById('lightboxTitle').textContent = title;
+            const modal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+            modal.show();
+        }
+    </script>
+
+    <style>
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-icon {
+            color: white;
+            font-size: 2rem;
+            background: rgba(0, 102, 204, 0.8);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

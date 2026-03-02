@@ -1,256 +1,342 @@
-# Frontend Development Guide
+# Trident Escapes - Frontend Documentation
 
-Guidelines and best practices for working with the Trident Escapes frontend.
+## Project Overview
+
+This is a modern, responsive frontend for the Trident Escapes tour agency website built with **Bootstrap 5** and modular vanilla JavaScript. The project follows a component-based architecture for maximum code reusability and maintainability.
 
 ## File Structure
 
 ```
 frontend/
-├── index.html              # Home page (main entry point)
-├── pages/                  # Additional pages
-│   ├── about.html
-│   ├── destinations.html
-│   └── contact.html
+├── index.html                 # Main HTML file
 ├── css/
-│   └── style.css          # Main stylesheet
+│   ├── variables.css         # CSS variables and color palette
+│   ├── layout.css            # Layout structure and grid
+│   ├── components.css        # Global component styles
+│   ├── hero.css              # Hero section styles
+│   ├── cards.css             # Card component styles
+│   ├── navigation.css        # Navbar styles
+│   └── style.css             # Main stylesheet with utilities
 ├── js/
-│   └── main.js            # Main JavaScript file
-├── images/                # Image assets
-│   └── (Add .png, .jpg, .gif files)
-└── assets/                # Other assets (fonts, icons, etc.)
-    └── (Add fonts and icons)
+│   ├── main.js               # Application initialization
+│   ├── router.js             # Client-side routing
+│   └── components/
+│       ├── navbar.js         # Navigation bar component
+│       ├── hero.js           # Hero section component
+│       ├── trending.js       # Trending destinations
+│       ├── packages.js       # Tour packages component
+│       ├── services.js       # Services listing
+│       ├── whychoose.js      # Why Choose Us section
+│       ├── team.js           # Team members section
+│       ├── faq.js            # FAQ accordion
+│       ├── footer.js         # Footer component
+│       └── pages/
+│           ├── about.js      # About Us page
+│           ├── packages.js   # Packages page
+│           ├── gallery.js    # Gallery/Photo page
+│           ├── contact.js    # Contact Us page
+│           └── book.js       # Booking page
+└── assets/
+    ├── images/               # Image assets
+    └── data/                 # JSON data (optional)
 ```
 
 ## Technologies
 
-- **HTML5**: Semantic markup
-- **CSS3**: Responsive design with Grid and Flexbox
-- **Vanilla JavaScript**: No frameworks, pure ES6+
+- **HTML5** - Semantic markup
+- **Bootstrap 5** - Responsive design framework
+- **CSS3** - Custom styling with CSS variables
+- **Vanilla JavaScript** - No dependencies, modular component architecture
+- **Font Awesome 6** - Icon library
 
-## CSS Architecture
+## Key Features
 
-**Color Scheme:**
-```css
---primary-color: #0066cc      /* Blue */
---secondary-color: #004a99    /* Dark Blue */
---text-color: #333            /* Dark Gray */
---light-bg: #f5f5f5          /* Light Gray */
---border-color: #ddd         /* Light Border */
-```
+### 1. Responsive Design
+- Mobile-first approach
+- Bootstrap grid system
+- Fluid typography
+- Touch-friendly interactions
 
-**Breakpoints:**
-```css
-/* Mobile First Approach */
-Default: < 768px
-@media (max-width: 768px)  /* Tablets and below */
-```
+### 2. Modular Architecture
+Each component is self-contained with:
+- Independent rendering function
+- Local state management
+- Event handling
+- Easy to update and maintain
 
-## JavaScript Standards
+### 3. Client-Side Routing
+- Single Page Application (SPA) routing
+- URL parameter support
+- No page reload navigation
+- History API support
 
-### API Communication
+### 4. CSS Variable System
+Comprehensive design tokens:
+- **Colors**: Primary, secondary, accent, dark, light
+- **Spacing**: xs, sm, md, lg, xl, xxl
+- **Typography**: Font sizes from xs to xxxl
+- **Borders**: Border radius in sm, md, lg, xl
 
-All API calls should use the configured base URL:
+### 5. Bootstrap Integration
+- Grid system
+- Cards
+- Accordion
+- Modal
+- Forms
+- Utilities
+
+## Component Architecture
+
+All components follow this pattern:
 
 ```javascript
-const API_URL = 'http://localhost:3000/api';
+const ComponentName = {
+    // Data
+    data: { /* component data */ },
+    
+    // Initialize component
+    init() {
+        this.render();
+        this.setupEventListeners();
+    },
+    
+    // Render HTML
+    render() {
+        const html = `<!-- component markup -->`;
+        document.querySelector('#container').innerHTML = html;
+    },
+    
+    // Setup event listeners
+    setupEventListeners() {
+        // Add event listeners here
+    }
+};
 
-// Example API call
-fetch(`${API_URL}/health`)
-  .then(response => response.json())
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    ComponentName.init();
+});
+```
+
+## CSS Variables System
+
+### Color Variables
+```css
+--primary-color: #0066cc      /* Main brand color */
+--secondary-color: #00a8e8    /* Secondary brand color */
+--accent-color: #ff6b35       /* Accent color */
+--dark-color: #1a1a1a         /* Dark backgrounds */
+--light-color: #f5f5f5        /* Light backgrounds */
+--text-color: #333333         /* Main text */
+--light-text: #666666         /* Secondary text */
+--border-color: #e0e0e0       /* Borders */
+```
+
+### Spacing System
+```css
+--spacing-xs: 0.25rem    /* 4px */
+--spacing-sm: 0.5rem     /* 8px */
+--spacing-md: 1rem       /* 16px */
+--spacing-lg: 1.5rem     /* 24px */
+--spacing-xl: 2rem       /* 32px */
+--spacing-xxl: 3rem      /* 48px */
+```
+
+## Pages
+
+### Home Page
+- Features all components on one page
+- Fully responsive design
+- Smooth scrolling between sections
+
+### About Us (`about.js`)
+- Company story
+- Mission & values
+- Why choose us
+
+### Packages (`packages.js`)
+- All tour packages
+- Filterable by duration
+- Pricing details
+
+### Gallery (`gallery.js`)
+- Photo grid layout
+- Category filters
+- Lightbox modal viewer
+
+### Contact (`contact.js`)
+- Contact form
+- Business information
+- Map integration
+
+### Book Trip (`book.js`)
+- Tour selection
+- Date picking
+- Dynamic pricing calculator
+
+## Routing
+
+The Router controls page navigation without page reloads:
+
+```javascript
+// Navigation happens with data-nav attribute
+<a href="#" data-nav="about">About Us</a>
+
+// Programmatic navigation
+Router.showPage('packages')
+```
+
+## Adding New Features
+
+### Add a New Component
+
+1. Create `js/components/mycomponent.js`
+2. Define component object with `init()` and `render()`
+3. Add container in index.html: `<div id="my-component-container"></div>`
+4. Include script in index.html
+5. Initialize in DOMContentLoaded event
+
+### Add a New Page
+
+1. Create `js/components/pages/mypage.js`
+2. Add container in index.html: `<div id="my-page" class="page d-none"></div>`
+3. Include script before main.js
+4. Update Router pages object
+5. Add navigation link with `data-nav="my-page"`
+
+## API Integration
+
+Global `APIService` for backend communication:
+
+```javascript
+// GET request
+APIService.get('/endpoint')
   .then(data => console.log(data))
-  .catch(error => console.error('API Error:', error));
+
+// POST request
+APIService.post('/endpoint', { data: 'value' })
+  .then(data => console.log(data))
 ```
 
-### Event Handling
+Configuration in `main.js`:
+```javascript
+const API_CONFIG = {
+    baseURL: 'http://localhost:3000/api',
+    timeout: 5000
+};
+```
+
+## Utilities
+
+Global `Utils` object provides helper functions:
 
 ```javascript
-// Always use addEventListener
-element.addEventListener('click', handleClick);
+// Format currency
+Utils.formatCurrency(1000, 'USD') // $1,000.00
 
-// Example
-document.querySelector('.cta-button').addEventListener('click', () => {
-  console.log('Button clicked');
-});
+// Format date
+Utils.formatDate(new Date()) // March 1, 2024
+
+// Check if mobile device
+if (Utils.isMobile()) { /* mobile logic */ }
+
+// Get URL parameter
+Utils.getQueryParam('page') // returns page value
+
+// Debounce and throttle
+const debouncedScroll = Utils.debounce(handleScroll, 300)
 ```
 
-### DOM Manipulation
+## Best Practices
 
-```javascript
-// Query selectors
-document.querySelector('.class-name');
-document.querySelectorAll('.class-name');
+### Component Organization
+- Keep components focused and single-responsibility
+- Use descriptive naming conventions
+- Document component purpose and usage
+- Handle errors gracefully
 
-// Creating elements
-const div = document.createElement('div');
-div.classList.add('my-class');
-document.body.appendChild(div);
-```
+### CSS Practices
+- Use CSS variables for consistency
+- Implement mobile-first responsive design
+- Leverage Bootstrap utilities
+- Minimize custom CSS when possible
 
-## Adding New Pages
+### JavaScript Standards
+- Use const/let instead of var
+- Avoid global variables
+- Use meaningful variable names
+- Add comments for complex logic
 
-### 1. Create HTML File
+### Performance
+- Lazy load images with placeholder
+- Use CSS animations over JavaScript
+- Minimize DOM manipulation
+- Debounce event handlers
 
-Create `pages/new-page.html`:
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Page - Trident Escapes</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-    <header>
-        <!-- Navigation -->
-    </header>
+### Accessibility
+- Use semantic HTML elements
+- Include alt text for images
+- Ensure color contrast compliance
+- Support keyboard navigation
 
-    <main>
-        <!-- Page content -->
-    </main>
+## Browser Support
 
-    <footer>
-        <!-- Footer -->
-    </footer>
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-    <script src="../js/main.js"></script>
-</body>
-</html>
-```
+## Development Workflow
 
-### 2. Update Navigation
+1. **Edit files** in `frontend/` directory
+2. **Open `index.html`** in browser (use Live Server)
+3. **Make changes** to HTML, CSS, or JS
+4. **Refresh browser** to see updates
+5. **Check console** (F12) for errors
+6. **Test responsive design** (Ctrl+Shift+M)
 
-Update all HTML files to include the new page in navigation:
-```html
-<ul class="nav-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="new-page.html">New Page</a></li>
-</ul>
-```
+## Deployment
 
-### 3. Add Styles (if needed)
+### Prepare for Production
+1. Minimize all CSS and JS files
+2. Optimize all images
+3. Update API_CONFIG with production URL
+4. Test on production server
+5. Verify all links and forms work
 
-Add custom styles to `css/style.css`:
-```css
-.new-page-section {
-  /* Your styles */
-}
-```
+### Deploy Steps
+1. Upload files to web server
+2. Ensure CDN resources are accessible
+3. Test cross-browser compatibility
+4. Monitor console for errors
+5. Verify API connectivity
 
-## Adding Images
+## Troubleshooting
 
-1. Place images in `images/` folder
-2. Reference in HTML:
-```html
-<img src="images/my-image.png" alt="Description">
-```
+**Components not rendering?**
+- Check browser console (F12)
+- Verify container element ID matches
+- Ensure scripts load in correct order
 
-3. Best Practices:
-   - Use descriptive `alt` text for accessibility
-   - Optimize images before uploading (WebP format recommended)
-   - Keep file sizes under 500KB for web
-   - Use consistent naming: `kebab-case`
+**Styles not applying?**
+- Clear browser cache (Ctrl+Shift+Delete)
+- Check CSS selector specificity
+- Verify Bootstrap CDN is loading
 
-## Performance Tips
-
-1. **Minimize HTTP Requests**: Combine CSS and JS files when possible
-2. **Image Optimization**: Use modern formats (WebP) with fallbacks
-3. **Lazy Loading**: Implement for below-the-fold images
-4. **Caching**: Configure browser caching in backend
-5. **Minification**: Minify CSS and JS for production
-
-## Accessibility Standards
-
-### Semantic HTML
-```html
-<!-- Good -->
-<nav>Navigation here</nav>
-<header>Header here</header>
-<main>Main content</main>
-<footer>Footer here</footer>
-
-<!-- Avoid <div> for structural elements -->
-```
-
-### ARIA Labels
-```html
-<button aria-label="Close menu">×</button>
-<img src="logo.png" alt="Trident Escapes Logo">
-```
-
-### Color Contrast
-- Text should have sufficient contrast (WCAG AA standard)
-- Don't rely on color alone for meaning
-
-## Testing Your Frontend
-
-### Manual Testing Checklist
-- [ ] Test on Chrome, Firefox, Safari, Edge
-- [ ] Test on mobile (iOS Safari, Chrome Mobile)
-- [ ] Verify all links work
-- [ ] Check form submissions
-- [ ] Test keyboard navigation
-- [ ] Verify responsive design at different breakpoints
-
-### Browser DevTools
-- Press F12 to open DevTools
-- Use Mobile view (Ctrl+Shift+M)
-- Check Console for JavaScript errors
-- Use Network tab to monitor API calls
-
-## Common Tasks
-
-### Styling a Component
-```css
-.feature-card {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-}
-```
-
-### Adding a Form
-```html
-<form id="contact-form">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
-  
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
-  
-  <button type="submit">Submit</button>
-</form>
-```
-
-### Handling Form Submission
-```javascript
-document.getElementById('contact-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  
-  fetch(`${API_URL}/contact`, {
-    method: 'POST',
-    body: formData
-  })
-  .then(res => res.json())
-  .then(data => console.log('Success:', data))
-  .catch(err => console.error('Error:', err));
-});
-```
+**Navigation not working?**
+- Check `data-nav` attributes
+- Verify Router is initialized
+- Check for JavaScript errors
 
 ## Resources
 
-- [MDN Web Docs](https://developer.mozilla.org)
-- [CSS Tricks](https://css-tricks.com)
-- [Web Accessibility](https://www.w3.org/WAI/)
-- [Responsive Design](https://responsivedesign.is/)
+- [Bootstrap 5 Docs](https://getbootstrap.com/docs/)
+- [Font Awesome Icons](https://fontawesome.com/)
+- [MDN Web Docs](https://developer.mozilla.org/)
+- [CSS Variables Reference](https://www.w3schools.com/css/css3_variables.asp)
 
 ---
 
-**Last Updated**: February 28, 2024
+**Last Updated**: March 1, 2024
+**Version**: 1.0.0
