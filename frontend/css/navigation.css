@@ -6,6 +6,9 @@
     top: 0;
     z-index: 1000;
     transition: var(--transition);
+    overflow: visible;
+    min-height: 70px;
+    padding: 0.5rem 0;
 }
 
 .navbar-custom.scrolled {
@@ -15,12 +18,35 @@
 .navbar-brand {
     font-size: var(--fs-xl);
     font-weight: 800;
-    color: var(--primary-color) !important;
     letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1001;
+    gap: 0.5rem;
+}
+
+.navbar-brand img,
+.logo {
+    height: 50px;
+    width: auto;
+    max-width: 200px;
+    display: block;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    filter: brightness(1);
+}
+
+.navbar-brand:hover img,
+.navbar-brand:hover .logo {
+    filter: brightness(0.75);
 }
 
 .navbar-brand:hover {
-    color: var(--secondary-color) !important;
+    color: auto !important;
 }
 
 /* Navigation Links */

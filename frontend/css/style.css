@@ -447,3 +447,7 @@ textarea.form-control {
 .slide-in {
     animation: slideIn 0.5s ease-out;
 }
+
+footer {
+  background-color: #f2efea;
+}
