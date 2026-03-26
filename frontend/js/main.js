@@ -3,12 +3,6 @@
  * Initializes the application and manages routing
  */
 
-// API Configuration
-const API_CONFIG = {
-    baseURL: 'http://localhost:3000/api',
-    timeout: 5000
-};
-
 /**
  * Main application object
  */
@@ -24,9 +18,6 @@ const TridentApp = {
         
         // Setup global utilities
         this.setupUtilities();
-        
-        // Check API availability
-        this.checkAPI();
         
         console.log('✅ Application ready');
     },
@@ -59,20 +50,6 @@ const TridentApp = {
         window.addEventListener('error', (event) => {
             console.error('Global error:', event.error);
         });
-    },
-    
-    /**
-     * Check API health
-     */
-    checkAPI() {
-        fetch(`${API_CONFIG.baseURL}/health`, { timeout: API_CONFIG.timeout })
-            .then(response => response.json())
-            .then(data => {
-                console.log('✅ API Connected:', data);
-            })
-            .catch(error => {
-                console.warn('⚠️ API not available:', error.message);
-            });
     }
 };
 
@@ -172,67 +149,12 @@ const Utils = {
 };
 
 /**
- * API Service for backend communication
- */
-const APIService = {
-    /**
-     * Fetch data from API
-     * @param {string} endpoint - API endpoint
-     * @param {object} options - Fetch options
-     * @returns {Promise}
-     */
-    async fetch(endpoint, options = {}) {
-        try {
-            const response = await fetch(`${API_CONFIG.baseURL}${endpoint}`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    ...options.headers
-                },
-                ...options
-            });
-            
-            if (!response.ok) {
-                throw new Error(`API Error: ${response.statusText}`);
-            }
-            
-            return await response.json();
-        } catch (error) {
-            console.error('API Error:', error);
-            throw error;
-        }
-    },
-    
-    /**
-     * POST request
-     * @param {string} endpoint - API endpoint
-     * @param {object} data - Request data
-     * @returns {Promise}
-     */
-    post(endpoint, data) {
-        return this.fetch(endpoint, {
-            method: 'POST',
-            body: JSON.stringify(data)
-        });
-    },
-    
-    /**
-     * GET request
-     * @param {string} endpoint - API endpoint
-     * @returns {Promise}
-     */
-    get(endpoint) {
-        return this.fetch(endpoint, { method: 'GET' });
-    }
-};
-
-/**
  * Initialize application when DOM is ready
  */
 document.addEventListener('DOMContentLoaded', () => {
     TridentApp.init();
 });
 
-// Make utilities and API service globally available
+// Make utilities globally available
 window.Utils = Utils;
-window.APIService = APIService;
 
