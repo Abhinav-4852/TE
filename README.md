@@ -386,8 +386,32 @@ Utils.throttle(func, 300)          // throttled function
 - **Phone**: +1 (800) 123-4567
 - **Hours**: Mon-Fri 9AM-6PM, Sat 10AM-4PM
 
+## ⚙️ Configuration System
+
+**✅ New: Simplified configuration for easy deployment!**
+
+### What's Included:
+- **`frontend/js/config.js`** - All business info (✅ committed to git)
+- **`.env`** - Web3Forms secrets including email (❌ not committed)
+- **`assets/favicon.png`** - Added to all HTML pages
+- **Setup scripts** - `setup-deployment.sh` (Linux/Mac), `setup-deployment.bat` (Windows)
+
+### Quick Config Update:
+```javascript
+// frontend/js/config.js - Edit business info here
+CONFIG.CONTACT.EMAIL.PRIMARY = 'your-email@domain.com'
+CONFIG.CONTACT.PHONE.PRIMARY = '+1 (555) 123-4567'
+// Push to git → Auto deploys!
+```
+
+### Documentation:
+- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Deploy to any hosting
+- **[CONFIGURATION_GUIDE.md](CONFIGURATION_GUIDE.md)** - All config options
+- **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Quick lookup
+- **[WEB3FORMS_SETUP.md](WEB3FORMS_SETUP.md)** - Form setup
+
 ---
 
-**Version**: 1.0.0  
-**Last Updated**: March 1, 2024  
+**Version**: 1.0.0
+**Last Updated**: March 28, 2026
 **Maintained By**: Trident Escapes Development Team

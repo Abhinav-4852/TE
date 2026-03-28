@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Your Adventure - Trident Escapes</title>
-    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -364,39 +367,89 @@
     </footer>
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    
+
+    <!-- Config -->
+    <script src="js/config.js"></script>
+
     <script>
-        // Handle Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Handle Form Submission with Web3Forms
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Get form data
-            const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-            
-            console.log('Form submitted:', formData);
-            
-            // Show success message
-            const alert = document.createElement('div');
-            alert.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
-            alert.style.zIndex = '9999';
-            alert.innerHTML = `
-                <strong>Success!</strong> Thank you for your message. We'll get back to you soon.
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            `;
-            document.body.appendChild(alert);
-            
-            // Reset form
-            this.reset();
-            
-            // Remove alert after 5 seconds
-            setTimeout(() => alert.remove(), 5000);
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+
+            // Create FormData and add web3forms fields
+            const formData = new FormData(this);
+            formData.append('access_key', CONFIG.WEB3FORMS.ACCESS_KEY);
+            formData.append('subject', 'New Custom Itinerary Request - Trident Escapes');
+            formData.append('from_name', CONFIG.FORMS.FROM_NAME);
+
+            try {
+                // Submit to Web3Forms
+                const response = await fetch(CONFIG.WEB3FORMS.API_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Show success message
+                    const alert = document.createElement('div');
+                    alert.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
+                    alert.style.zIndex = '9999';
+                    alert.style.maxWidth = '500px';
+                    alert.innerHTML = `
+                        <div class="d-flex align-items-start">
+                            <i class="fas fa-check-circle me-3 mt-1" style="font-size: 1.5rem;"></i>
+                            <div>
+                                <strong>Request Sent Successfully!</strong>
+                                <p class="mb-0 mt-1">Thank you! We've received your custom itinerary request. Our team will contact you within 24 hours.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    `;
+                    document.body.appendChild(alert);
+
+                    // Reset form
+                    this.reset();
+
+                    // Remove alert after 5 seconds
+                    setTimeout(() => alert.remove(), 6000);
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (error) {
+                // Show error message
+                const alert = document.createElement('div');
+                alert.className = 'alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
+                alert.style.zIndex = '9999';
+                alert.style.maxWidth = '500px';
+                alert.innerHTML = `
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-exclamation-triangle me-3 mt-1" style="font-size: 1.5rem;"></i>
+                        <div>
+                            <strong>Oops! Something went wrong</strong>
+                            <p class="mb-2 mt-1">We couldn't send your request. This might be because:</p>
+                            <ul class="mb-2 small">
+                                <li>Network connection issue</li>
+                                <li>Server temporarily unavailable</li>
+                            </ul>
+                            <p class="mb-0 small">Please try again or reach us at <strong>tweet.ayush@gmail.com</strong></p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.body.appendChild(alert);
+
+                console.error('Form submission error:', error);
+                setTimeout(() => alert.remove(), 8000);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Message';
+            }
         });
     </script>
 </body>
