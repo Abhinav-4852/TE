@@ -79,6 +79,11 @@ const ContactPageComponent = {
                         <div class="contact-form">
                             <h3 class="mb-4">Send us a Message</h3>
                             <form id="contactForm">
+                                <!-- Web3Forms Access Key -->
+                                <input type="hidden" name="access_key" value="">
+                                <input type="hidden" name="subject" value="">
+                                <input type="hidden" name="from_name" value="">
+
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="firstName" class="form-label">First Name *</label>
@@ -89,7 +94,7 @@ const ContactPageComponent = {
                                         <input type="text" class="form-control" id="lastName" name="lastName" required>
                                     </div>
                                 </div>
-                                
+
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email Address *</label>
                                     <input type="email" class="form-control" id="email" name="email" required>
@@ -163,28 +168,64 @@ const ContactPageComponent = {
     setupForm() {
         const form = document.querySelector('#contactForm');
         if (!form) return;
-        
-        form.addEventListener('submit', (e) => {
+
+        // Populate hidden fields from config
+        form.querySelector('input[name="access_key"]').value = CONFIG.WEB3FORMS.ACCESS_KEY;
+        form.querySelector('input[name="subject"]').value = CONFIG.FORMS.CONTACT_SUBJECT;
+        form.querySelector('input[name="from_name"]').value = CONFIG.FORMS.FROM_NAME;
+
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            // Simulate form submission
+
             const messageEl = document.querySelector('#formMessage');
-            messageEl.classList.remove('d-none');
-            messageEl.classList.add('alert', 'alert-success');
-            messageEl.innerHTML = '<i class="fas fa-check-circle me-2"></i>Thank you! Your message has been sent successfully. We will get back to you soon.';
-            
-            // Reset form
-            form.reset();
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                messageEl.classList.add('d-none');
-            }, 5000);
-            
-            console.log('Form submitted:', data);
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+
+            const formData = new FormData(form);
+
+            try {
+                // Submit to Web3Forms
+                const response = await fetch(CONFIG.WEB3FORMS.API_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Success message
+                    messageEl.classList.remove('d-none', 'alert-danger');
+                    messageEl.classList.add('alert', 'alert-success');
+                    messageEl.innerHTML = '<i class="fas fa-check-circle me-2"></i>Thank you! Your message has been sent successfully. We will get back to you soon.';
+
+                    // Reset form
+                    form.reset();
+                    // Re-populate hidden fields after reset
+                    form.querySelector('input[name="access_key"]').value = CONFIG.WEB3FORMS.ACCESS_KEY;
+                    form.querySelector('input[name="subject"]').value = CONFIG.FORMS.CONTACT_SUBJECT;
+                    form.querySelector('input[name="from_name"]').value = CONFIG.FORMS.FROM_NAME;
+
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        messageEl.classList.add('d-none');
+                    }, 5000);
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (error) {
+                // Error message
+                messageEl.classList.remove('d-none', 'alert-success');
+                messageEl.classList.add('alert', 'alert-danger');
+                messageEl.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i>Sorry, there was an error sending your message. Please try again or contact us directly.';
+                console.error('Form submission error:', error);
+            } finally {
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Message';
+            }
         });
     }
 };

@@ -10,6 +10,9 @@ yarn.lock
 .env.local
 .env.*.local
 
+# Config file with secrets (uncomment after running setup-deployment script)
+# frontend/js/config.js
+
 # IDE
 .vscode/
 .idea/
