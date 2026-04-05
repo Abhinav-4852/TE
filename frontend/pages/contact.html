@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Your Adventure - Trident Escapes</title>
+    <title>Contact Us - Trident Escapes</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -11,19 +11,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/cards.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../styles/base/variables.css">
+    <link rel="stylesheet" href="../styles/layout/layout.css">
+    <link rel="stylesheet" href="../styles/components/components.css">
+    <link rel="stylesheet" href="../styles/components/hero.css">
+    <link rel="stylesheet" href="../styles/components/cards.css">
+    <link rel="stylesheet" href="../styles/layout/navigation.css">
+    <link rel="stylesheet" href="../styles/base/style.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
                 <i class="fas fa-compass me-2"></i>Trident Escapes
             </a>
             
@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
@@ -61,8 +61,8 @@
     <!-- Page Hero Banner -->
     <div class="hero" style="min-height: 300px;">
         <div class="hero-content">
-            <h1 class="mb-3">Design Your Adventure</h1>
-            <p class="lead mb-0">Create the perfect trip with our custom itinerary options</p>
+            <h1 class="mb-3">Contact Us</h1>
+            <p class="lead mb-0">Get In Touch - We're Here to Help</p>
         </div>
     </div>
 
@@ -76,199 +76,145 @@
                 </div>
 
                 <div class="row g-4">
+                    <!-- Contact Information -->
+                    <div class="col-lg-4">
+                        <div class="mb-5">
+                            <h5 class="mb-3">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>Address
+                            </h5>
+                            <p class="text-muted">
+                                123 Travel Street<br>
+                                Adventure City, AC 12345<br>
+                                United States
+                            </p>
+                        </div>
 
-                    
-    <!-- Create My Trip Form -->
-    <div class="container my-5">
-    <div class="card shadow-lg p-4">
-        <h2 class="mb-4 text-center">Create My Trip</h2>
-        
-    <form>
+                        <div class="mb-5">
+                            <h5 class="mb-3">
+                                <i class="fas fa-phone text-primary me-2"></i>Phone
+                            </h5>
+                            <p class="text-muted">
+                                <a href="tel:+18001234567" class="text-decoration-none">
+                                    +1 (800) 123-4567
+                                </a><br>
+                                <span class="small">Available 24/7</span>
+                            </p>
+                        </div>
 
-      <!-- Travel Details -->
-      <h5 class="mb-3">Travel Details</h5>
+                        <div class="mb-5">
+                            <h5 class="mb-3">
+                                <i class="fas fa-envelope text-primary me-2"></i>Email
+                            </h5>
+                            <p class="text-muted">
+                                <a href="mailto:info@tridentescapes.com" class="text-decoration-none">
+                                    info@tridentescapes.com
+                                </a><br>
+                                <a href="mailto:support@tridentescapes.com" class="text-decoration-none">
+                                    support@tridentescapes.com
+                                </a>
+                            </p>
+                        </div>
 
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label class="form-label">Destination</label>
-          <input type="text" class="form-control" placeholder="Enter destination">
-        </div>
+                        <div class="mb-0">
+                            <h5 class="mb-3">
+                                <i class="fas fa-clock text-primary me-2"></i>Business Hours
+                            </h5>
+                            <p class="text-muted">
+                                Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 10:00 AM - 4:00 PM<br>
+                                Sunday: Closed<br>
+                                <span class="small text-primary">24/7 Emergency Support Available</span>
+                            </p>
+                        </div>
+                    </div>
 
-        <div class="col-md-6">
-          <label class="form-label">Travel Date</label>
-          <input type="date" class="form-control">
-        </div>
-      </div>
+                    <!-- Contact Form -->
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <form id="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName" class="form-label">
+                                                First Name <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName" class="form-label">
+                                                Last Name <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                        </div>
+                                    </div>
 
-      <div class="row mb-3">
-        <div class="col-md-4">
-          <label class="form-label">Duration (Days)</label>
-          <input type="number" class="form-control" min="1">
-        </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="email" class="form-label">
+                                                Email <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="email" class="form-control" id="email" name="email" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="phone" class="form-label">
+                                                Phone <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                                        </div>
+                                    </div>
 
-        <div class="col-md-4">
-          <label class="form-label">Adults</label>
-          <input type="number" class="form-control" min="1" value="1">
-        </div>
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">
+                                            Subject <span class="text-danger">*</span>
+                                        </label>
+                                        <select class="form-select" id="subject" name="subject" required>
+                                            <option value="">Select a subject...</option>
+                                            <option value="booking">Booking Inquiry</option>
+                                            <option value="custom">Custom Itinerary</option>
+                                            <option value="feedback">Feedback</option>
+                                            <option value="support">Customer Support</option>
+                                            <option value="partnership">Partnership Opportunity</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
 
-        <div class="col-md-4">
-          <label class="form-label">Children</label>
-          <input type="number" class="form-control" min="0" value="0">
-        </div>
-      </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">
+                                            Message <span class="text-danger">*</span>
+                                        </label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us about your travel dreams..." required></textarea>
+                                    </div>
 
-      <!-- Personal Details -->
-      <h5 class="mb-3 mt-4">Personal Details</h5>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                                        <label class="form-check-label" for="privacy">
+                                            I agree to the <a href="#" class="text-primary text-decoration-none">Privacy Policy</a> and <a href="#" class="text-primary text-decoration-none">Terms of Service</a>
+                                        </label>
+                                    </div>
 
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label class="form-label">Full Name</label>
-          <input type="text" class="form-control">
-        </div>
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="col-md-6">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-control">
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label class="form-label">Phone</label>
-          <input type="tel" class="form-control">
-        </div>
-
-        <div class="col-md-6">
-          <label class="form-label">Country</label>
-          <input type="text" class="form-control">
-        </div>
-      </div>
-
-      <!-- Preferences -->
-      <h5 class="mb-3 mt-4">Preferences</h5>
-
-      <div class="row mb-3">
-        <div class="col-md-4">
-          <label class="form-label">Budget</label>
-          <select class="form-select">
-            <option>Select Budget</option>
-            <option>Budget</option>
-            <option>Standard</option>
-            <option>Luxury</option>
-          </select>
-        </div>
-
-        <div class="col-md-4">
-          <label class="form-label">Hotel Category</label>
-          <select class="form-select">
-            <option>Select Hotel Type</option>
-            <option>3 Star</option>
-            <option>4 Star</option>
-            <option>5 Star</option>
-          </select>
-        </div>
-
-        <div class="col-md-4">
-          <label class="form-label">Travel Type</label>
-          <select class="form-select">
-            <option>Select Type</option>
-            <option>Family</option>
-            <option>Honeymoon</option>
-            <option>Adventure</option>
-            <option>Solo</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Special Requirements</label>
-        <textarea class="form-control" rows="4" placeholder="Write your requirements..."></textarea>
-      </div>
-
-      <!-- Submit -->
-      <div class="text-center">
-        <button type="submit" class="btn btn-primary px-5">Submit</button>
-      </div>
-
-    </form>
-  </div>
-</div>   
-
- <!-- Contact Information -->
-           <div class="row g-4">
-
-  <!-- Address -->
-  <div class="col-lg-3 col-md-6">
-    <div>
-      <h6 class="mb-2">
-        <i class="fas fa-map-marker-alt text-primary me-2"></i>Address
-      </h6>
-      <p class="text-muted small mb-0">
-        123 Travel Street<br>
-        Adventure City, AC 12345<br>
-        United States
-      </p>
-    </div>
-  </div>
-
-  <!-- Phone -->
-  <div class="col-lg-3 col-md-6">
-    <div>
-      <h6 class="mb-2">
-        <i class="fas fa-phone text-primary me-2"></i>Phone
-      </h6>
-      <p class="text-muted small mb-0">
-        <a href="tel:+18001234567" class="text-decoration-none">
-          +1 (800) 123-4567
-        </a><br>
-        <span class="small">24/7</span>
-      </p>
-    </div>
-  </div>
-
-  <!-- Email -->
-  <div class="col-lg-3 col-md-6">
-    <div>
-      <h6 class="mb-2">
-        <i class="fas fa-envelope text-primary me-2"></i>Email
-      </h6>
-      <p class="text-muted small mb-0">
-        <a href="mailto:info@tridentescapes.com" class="text-decoration-none">
-          info@tridentescapes.com
-        </a><br>
-        <a href="mailto:support@tridentescapes.com" class="text-decoration-none">
-          support@tridentescapes.com
-        </a>
-      </p>
-    </div>
-  </div>
-
-  <!-- Hours -->
-  <div class="col-lg-3 col-md-6">
-    <div>
-      <h6 class="mb-2">
-        <i class="fas fa-clock text-primary me-2"></i>Hours
-      </h6>
-      <p class="text-muted small mb-0">
-        Mon–Fri: 9–6<br>
-        Sat: 10–4<br>
-        Sun: Closed
-      </p>
-    </div>
-  </div>
-
-</div>
-
-        <!-- Success Message -->
-        <div class="alert alert-success mt-4 d-none" id="successMessage">
-            Your custom itinerary request has been submitted successfully!
-        </div>
-    </div>
-    </div>
-</div>
-    </div>
-</section>
-
+        <!-- Map Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="section-title text-center mb-4">
+                    <h2>Our Location</h2>
+                </div>
+                <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.8851852768584!2d77.21438!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfcc82eb5a8dd%3A0x4c45ecc76eff48f5!2sIndia%20Gate!5e0!3m2!1sen!2sus!4v1234567890" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
    <footer class="text-light py-5">
@@ -276,7 +222,7 @@
             <div class="row g-4 mb-4">
                 <div class="col-md-6 col-lg-3">
                     <h5 class="mb-3">
-                        <img src="assets/Trident Escapes.svg" alt="Trident Escapes Logo" style="height: 50px;" class="me-2">
+                        <img src="../assets/icons/trident-escapes.svg" alt="Trident Escapes Logo" style="height: 50px;" class="me-2">
                     </h5>
                     <p class="text-muted small mb-3">Address Line 1, City, State - 123456</p>
                     <ul class="list-unstyled text-muted small">
@@ -296,7 +242,7 @@
                 <div class="col-md-6 col-lg-3">
                     <h5 class="mb-3">Pages</h5>
                     <ul class="list-unstyled text-muted small">
-                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="../index.html" class="text-muted text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
                         <li class="mb-2"><a href="packages.html" class="text-muted text-decoration-none">Packages</a></li>
                         <li class="mb-2"><a href="gallery.html" class="text-muted text-decoration-none">Gallery</a></li>
