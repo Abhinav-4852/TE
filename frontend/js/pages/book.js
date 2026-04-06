@@ -42,6 +42,11 @@ const BookPageComponent = {
                         <div class="booking-form bg-light-color p-5 rounded-lg">
                             <h3 class="mb-4">Tour Booking Form</h3>
                             <form id="bookingForm">
+                                <!-- Web3Forms Access Key -->
+                                <input type="hidden" name="access_key" value="">
+                                <input type="hidden" name="subject" value="">
+                                <input type="hidden" name="from_name" value="">
+
                                 <!-- Personal Information Section -->
                                 <div class="mb-4">
                                     <h5 class="mb-3"><i class="fas fa-user text-primary me-2"></i>Personal Information</h5>
@@ -269,25 +274,61 @@ const BookPageComponent = {
     setupForm() {
         const form = document.querySelector('#bookingForm');
         if (!form) return;
-        
-        form.addEventListener('submit', (e) => {
+
+        // Populate hidden fields from config
+        form.querySelector('input[name="access_key"]').value = CONFIG.WEB3FORMS.ACCESS_KEY;
+        form.querySelector('input[name="subject"]').value = CONFIG.FORMS.BOOKING_SUBJECT;
+        form.querySelector('input[name="from_name"]').value = CONFIG.FORMS.FROM_NAME;
+
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            // Simulate booking submission
+
             const messageEl = document.querySelector('#bookMessage');
-            messageEl.classList.remove('d-none');
-            messageEl.classList.add('alert', 'alert-success');
-            messageEl.innerHTML = '<i class="fas fa-check-circle me-2"></i><strong>Booking Confirmed!</strong> You will receive a confirmation email shortly with payment details and booking reference number.';
-            
-            console.log('Booking submitted:', data);
-            
-            // Show message for 6 seconds
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-            }, 1000);
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+
+            const formData = new FormData(form);
+
+            // Add booking summary to email
+            const totalCost = document.querySelector('#totalCost').textContent;
+            formData.append('booking_total', `$${totalCost}`);
+
+            try {
+                // Submit to Web3Forms
+                const response = await fetch(CONFIG.WEB3FORMS.API_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Success message
+                    messageEl.classList.remove('d-none', 'alert-danger');
+                    messageEl.classList.add('alert', 'alert-success');
+                    messageEl.innerHTML = '<i class="fas fa-check-circle me-2"></i><strong>Booking Confirmed!</strong> You will receive a confirmation email shortly with payment details and booking reference number.';
+
+                    // Scroll to message
+                    setTimeout(() => {
+                        window.scrollTo(0, 0);
+                    }, 1000);
+                } else {
+                    throw new Error(result.message || 'Booking failed');
+                }
+            } catch (error) {
+                // Error message
+                messageEl.classList.remove('d-none', 'alert-success');
+                messageEl.classList.add('alert', 'alert-danger');
+                messageEl.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i>Sorry, there was an error processing your booking. Please try again or contact us directly.';
+                console.error('Booking submission error:', error);
+            } finally {
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Complete Booking';
+            }
         });
     }
 };

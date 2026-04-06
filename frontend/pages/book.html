@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Trip - Trident Escapes</title>
-    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -24,7 +27,7 @@
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container">
             <a class="navbar-brand" href="../index.html">
-                <i class="fas fa-compass me-2"></i>Trident Escapes
+                <img src="../assets/icons/trident-escapes.svg" alt="Trident Escapes logo" class="logo">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -39,6 +42,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDestinations" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownDestinations">
+                            <li><a class="dropdown-item" href="india-destination.html">India</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="packages.html">Packages</a>
                     </li>
@@ -46,10 +57,13 @@
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="custom-itineraries.html">Customize your Trip</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary btn-sm navbar-cta ms-2 active" href="book.html">
+                        <a class="btn btn-primary btn-sm navbar-cta ms-2" href="book.html">
                             <i class="fas fa-calendar-check me-1"></i>Book Your Trip
                         </a>
                     </li>
@@ -419,7 +433,10 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    
+
+    <!-- Config -->
+    <script src="js/config.js"></script>
+
     <script>
         // Package Details
         const packageDurations = {
@@ -442,7 +459,7 @@
             const packageSelect = document.getElementById('package');
             const travelers = parseInt(document.getElementById('travelers').value) || 1;
             const accommodation = document.querySelector('input[name="accommodation"]:checked').value;
-            
+
             // Get package price
             const selectedOption = packageSelect.options[packageSelect.selectedIndex];
             const packagePrice = parseInt(selectedOption.dataset.price) || 0;
@@ -472,7 +489,7 @@
             document.getElementById('summaryPackagePrice').textContent = packagePrice;
             document.getElementById('summaryTravelers').textContent = travelers;
             document.getElementById('summarySubtotal').textContent = baseSubtotal.toLocaleString();
-            
+
             if (accommodationSubtotal > 0) {
                 document.getElementById('accommodationSummary').style.display = 'flex';
                 document.getElementById('summaryAccommodation').textContent = accommodationSubtotal.toLocaleString();
@@ -490,26 +507,89 @@
             document.getElementById('summaryTotal').textContent = totalAmount.toLocaleString();
         }
 
-        // Form submission
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        // Form submission with Web3Forms
+        document.getElementById('bookingForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Show success message
-            const alert = document.createElement('div');
-            alert.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
-            alert.style.zIndex = '9999';
-            alert.innerHTML = `
-                <strong>Booking Confirmed!</strong> Check your email for confirmation details.
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            `;
-            document.body.appendChild(alert);
-            
-            // Reset form
-            this.reset();
-            calculateTotal();
-            
-            // Remove alert after 5 seconds
-            setTimeout(() => alert.remove(), 5000);
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+
+            // Create FormData and add web3forms fields
+            const formData = new FormData(this);
+            formData.append('access_key', CONFIG.WEB3FORMS.ACCESS_KEY);
+            formData.append('subject', CONFIG.FORMS.BOOKING_SUBJECT);
+            formData.append('from_name', CONFIG.FORMS.FROM_NAME);
+
+            // Add booking summary
+            const totalAmount = document.getElementById('summaryTotal').textContent;
+            formData.append('total_amount', `$${totalAmount}`);
+
+            try {
+                // Submit to Web3Forms
+                const response = await fetch(CONFIG.WEB3FORMS.API_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Show success message
+                    const alert = document.createElement('div');
+                    alert.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
+                    alert.style.zIndex = '9999';
+                    alert.style.maxWidth = '500px';
+                    alert.innerHTML = `
+                        <div class="d-flex align-items-start">
+                            <i class="fas fa-check-circle me-3 mt-1" style="font-size: 1.5rem;"></i>
+                            <div>
+                                <strong>Booking Request Received!</strong>
+                                <p class="mb-0 mt-1">Thank you! We've received your booking request. You'll receive a confirmation email with payment details shortly.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    `;
+                    document.body.appendChild(alert);
+
+                    // Reset form
+                    this.reset();
+                    calculateTotal();
+
+                    // Remove alert after 5 seconds
+                    setTimeout(() => alert.remove(), 6000);
+                } else {
+                    throw new Error(result.message || 'Booking failed');
+                }
+            } catch (error) {
+                // Show error message
+                const alert = document.createElement('div');
+                alert.className = 'alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
+                alert.style.zIndex = '9999';
+                alert.style.maxWidth = '500px';
+                alert.innerHTML = `
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-exclamation-triangle me-3 mt-1" style="font-size: 1.5rem;"></i>
+                        <div>
+                            <strong>Booking Failed</strong>
+                            <p class="mb-2 mt-1">We couldn't process your booking. This might be because:</p>
+                            <ul class="mb-2 small">
+                                <li>Network connection issue</li>
+                                <li>Server temporarily unavailable</li>
+                            </ul>
+                            <p class="mb-0 small">Please try again or contact us at <strong>tweet.ayush@gmail.com</strong></p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.body.appendChild(alert);
+
+                console.error('Booking submission error:', error);
+                setTimeout(() => alert.remove(), 8000);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-check-circle me-2"></i>Complete Booking';
+            }
         });
 
         // Initialize on page load

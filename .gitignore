@@ -11,6 +11,9 @@ yarn.lock
 .env.*.local
 .env.example
 
+# Config file with secrets (uncomment after running setup-deployment script)
+# frontend/js/config.js
+
 # IDE
 .vscode/
 .idea/
