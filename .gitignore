@@ -9,6 +9,7 @@ yarn.lock
 .env
 .env.local
 .env.*.local
+.env.example
 
 # Config file with secrets (uncomment after running setup-deployment script)
 # frontend/js/config.js

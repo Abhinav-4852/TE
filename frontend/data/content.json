@@ -1,0 +1,326 @@
+{
+  "site": {
+    "name": "Trident Escapes",
+    "tagline": "Your Gateway to Adventure",
+    "contact": {
+      "phone": "+1 (800) 123-4567",
+      "email": "info@tridentescapes.com",
+      "supportEmail": "support@tridentescapes.com",
+      "address": "123 Travel Street<br>Adventure City, AC 12345<br>United States",
+      "addressShort": "Address Line 1, City, State - 123456",
+      "hours": {
+        "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+        "saturday": "Saturday: 10:00 AM - 4:00 PM",
+        "sunday": "Sunday: Closed"
+      }
+    },
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "linkedin": "#"
+    }
+  },
+
+  "home": {
+    "hero": {
+      "title": "Design Your Dream Escape",
+      "subtitle": "Explore amazing travel experiences around the world with Trident Escapes"
+    },
+
+    "trending": [
+      {
+        "image": "https://via.placeholder.com/400x250?text=Paris",
+        "alt": "Paris, France",
+        "title": "Paris, France",
+        "description": "Experience the magic of the City of Light with iconic landmarks and world-class cuisine.",
+        "rating": "4.8",
+        "reviews": "324"
+      },
+      {
+        "image": "https://via.placeholder.com/400x250?text=Tokyo",
+        "alt": "Tokyo, Japan",
+        "title": "Tokyo, Japan",
+        "description": "Dive into the blend of ancient traditions and cutting-edge technology.",
+        "rating": "4.9",
+        "reviews": "287"
+      },
+      {
+        "image": "https://via.placeholder.com/400x250?text=Bali",
+        "alt": "Bali, Indonesia",
+        "title": "Bali, Indonesia",
+        "description": "Relax on pristine beaches and explore lush rice terraces and temples.",
+        "rating": "4.7",
+        "reviews": "412"
+      },
+      {
+        "image": "https://via.placeholder.com/400x250?text=New+York",
+        "alt": "New York, USA",
+        "title": "New York, USA",
+        "description": "The city that never sleeps offers endless entertainment and iconic attractions.",
+        "rating": "4.6",
+        "reviews": "542"
+      }
+    ],
+
+    "packages": [
+      {
+        "image": "https://via.placeholder.com/400x250?text=Golden+Triangle",
+        "title": "Golden Triangle",
+        "subtitle": "Explore Delhi, Agra, and Jaipur",
+        "price": "599",
+        "days": "5",
+        "features": ["3-star accommodation", "All meals", "Expert guide", "Transport"],
+        "featured": false
+      },
+      {
+        "image": "https://via.placeholder.com/400x250?text=Rishikesh",
+        "title": "Golden Triangle + Rishikesh",
+        "subtitle": "Added adventure and spiritual retreat",
+        "price": "749",
+        "days": "7",
+        "features": ["4-star accommodation", "All meals", "Expert guide", "Yoga session"],
+        "featured": true,
+        "badge": "Popular"
+      },
+      {
+        "image": "https://via.placeholder.com/400x250?text=Rajasthan",
+        "title": "Golden Triangle + Rajasthan",
+        "subtitle": "Royal palaces and desert experience",
+        "price": "899",
+        "days": "9",
+        "features": ["5-star accommodation", "All meals", "Expert guide", "Desert safari"],
+        "featured": false
+      },
+      {
+        "image": "https://via.placeholder.com/400x250?text=Varanasi",
+        "title": "Golden Triangle + Varanasi",
+        "subtitle": "Spiritual journey on the Ganges",
+        "price": "799",
+        "days": "8",
+        "features": ["4-star accommodation", "All meals", "Expert guide", "Boat cruise"],
+        "featured": false
+      }
+    ],
+
+    "services": [
+      {
+        "icon": "map-marked-alt",
+        "title": "Custom Itineraries",
+        "description": "Create your own personalized travel plan tailored to your preferences"
+      },
+      {
+        "icon": "hotel",
+        "title": "Hotel Booking",
+        "description": "Access to premium hotels and accommodations at competitive prices"
+      },
+      {
+        "icon": "car",
+        "title": "Transportation",
+        "description": "Comfortable and reliable transport arrangements throughout your journey"
+      },
+      {
+        "icon": "utensils",
+        "title": "Food Services",
+        "description": "Authentic local cuisine and dining experiences at select restaurants"
+      },
+      {
+        "icon": "camera",
+        "title": "Photography Tours",
+        "description": "Capture the best moments with expert photography guidance"
+      },
+      {
+        "icon": "life-ring",
+        "title": "24/7 Support",
+        "description": "Round-the-clock customer support for peace of mind during travel"
+      }
+    ],
+
+    "stats": [
+      {
+        "icon": "star",
+        "value": "15+",
+        "title": "Years of Experience",
+        "description": "Over a decade and a half of crafting memorable travel experiences"
+      },
+      {
+        "icon": "users",
+        "value": "50K+",
+        "title": "Happy Travelers",
+        "description": "Thousands of satisfied customers who trust us with their adventures"
+      },
+      {
+        "icon": "globe",
+        "value": "100+",
+        "title": "Destinations",
+        "description": "Access to over a hundred amazing destinations worldwide"
+      },
+      {
+        "icon": "award",
+        "value": "8/10",
+        "title": "Rating",
+        "description": "Consistently rated highly for service quality and customer satisfaction"
+      }
+    ],
+
+    "faq": [
+      {
+        "question": "What is included in a tour package?",
+        "answer": "Our tour packages typically include accommodation, meals, guided tours, transportation, and entrance fees to major attractions. Specific inclusions vary by package."
+      },
+      {
+        "question": "How can I book a tour?",
+        "answer": "You can book a tour through our website using the booking form, or contact our team directly. We also accept phone and email bookings for your convenience."
+      },
+      {
+        "question": "What is your cancellation policy?",
+        "answer": "We offer flexible cancellation policies. Cancellations made 30 days before travel receive a full refund. Less notice may incur cancellation fees."
+      },
+      {
+        "question": "Do you offer customized itineraries?",
+        "answer": "Yes! We specialize in creating custom itineraries tailored to your preferences, interests, and budget. Contact our team to discuss your specific needs."
+      }
+    ]
+  },
+
+  "packages": [
+    {
+      "image": "https://via.placeholder.com/400x250?text=Golden+Triangle",
+      "title": "Golden Triangle",
+      "subtitle": "Explore Delhi, Agra, and Jaipur",
+      "price": "599",
+      "days": "5",
+      "daysCategory": "5-7",
+      "featured": false
+    },
+    {
+      "image": "https://via.placeholder.com/400x250?text=Rishikesh",
+      "title": "Golden Triangle + Rishikesh",
+      "subtitle": "Added adventure and spiritual retreat",
+      "price": "799",
+      "days": "8",
+      "daysCategory": "8-10",
+      "featured": true,
+      "badge": "Popular"
+    },
+    {
+      "image": "https://via.placeholder.com/400x250?text=Rajasthan",
+      "title": "Golden Triangle + Rajasthan",
+      "subtitle": "Royal palaces and desert experience",
+      "price": "999",
+      "days": "11",
+      "daysCategory": "11+",
+      "featured": false
+    },
+    {
+      "image": "https://via.placeholder.com/400x250?text=Varanasi",
+      "title": "Golden Triangle + Varanasi",
+      "subtitle": "Spiritual journey on the Ganges",
+      "price": "899",
+      "days": "9",
+      "daysCategory": "8-10",
+      "featured": false
+    },
+    {
+      "image": "https://via.placeholder.com/400x250?text=Northeast+India",
+      "title": "Northeast India Adventure",
+      "subtitle": "Tea gardens, mountains, and wildlife",
+      "price": "1,199",
+      "days": "12",
+      "daysCategory": "11+",
+      "featured": false
+    },
+    {
+      "image": "https://via.placeholder.com/400x250?text=Kerala",
+      "title": "Kerala Backwaters & Beaches",
+      "subtitle": "Tropical paradise escape",
+      "price": "649",
+      "days": "6",
+      "daysCategory": "5-7",
+      "featured": false
+    }
+  ],
+
+  "gallery": [
+    {
+      "src": "https://via.placeholder.com/600x400?text=Taj+Mahal",
+      "title": "Taj Mahal",
+      "location": "Agra",
+      "category": "monuments"
+    },
+    {
+      "src": "https://via.placeholder.com/600x400?text=Red+Fort",
+      "title": "Red Fort",
+      "location": "Delhi",
+      "category": "monuments"
+    },
+    {
+      "src": "https://via.placeholder.com/600x400?text=City+Palace",
+      "title": "City Palace",
+      "location": "Jaipur",
+      "category": "monuments"
+    },
+    {
+      "src": "https://via.placeholder.com/600x400?text=Mountain+Sunrise",
+      "title": "Mountain Sunrise",
+      "location": "Himalayas",
+      "category": "nature"
+    },
+    {
+      "src": "https://via.placeholder.com/600x400?text=Forest+Trail",
+      "title": "Forest Trail",
+      "location": "Kerala",
+      "category": "nature"
+    },
+    {
+      "src": "https://via.placeholder.com/600x400?text=Rice+Terraces",
+      "title": "Rice Terraces",
+      "location": "Northeast India",
+      "category": "nature"
+    },
+    {
+      "src": "https://via.placeholder.com/600x400?text=Rock+Climbing",
+      "title": "Rock Climbing",
+      "location": "Rishikesh",
+      "category": "adventure"
+    },
+    {
+      "src": "https://via.placeholder.com/600x400?text=Whitewater+Rafting",
+      "title": "Whitewater Rafting",
+      "location": "Rishikesh",
+      "category": "adventure"
+    },
+    {
+      "src": "https://via.placeholder.com/600x400?text=Local+Festival",
+      "title": "Local Festival",
+      "location": "Rajasthan",
+      "category": "culture"
+    }
+  ],
+
+  "about": {
+    "reviews": [
+      {
+        "rating": 4.5,
+        "text": "Trident Escapes made our dream vacation a reality! Every detail was perfectly planned, and our guide was exceptional. We can't wait to book our next adventure with them.",
+        "avatar": "https://via.placeholder.com/60x60?text=JD",
+        "name": "Jane Doe",
+        "role": "Adventure Enthusiast"
+      },
+      {
+        "rating": 5,
+        "text": "From the seamless booking process to the incredible destinations, Trident Escapes exceeded all our expectations. Highly recommended for anyone seeking a truly immersive travel experience.",
+        "avatar": "https://via.placeholder.com/60x60?text=AS",
+        "name": "Alex Smith",
+        "role": "Explorer & Photographer"
+      },
+      {
+        "rating": 4,
+        "text": "The team at Trident Escapes provided unparalleled support throughout our trip. Their attention to detail and genuine care made all the difference. We felt safe and well-cared for.",
+        "avatar": "https://via.placeholder.com/60x60?text=ML",
+        "name": "Maria Lee",
+        "role": "Relaxation Seeker"
+      }
+    ]
+  }
+}
