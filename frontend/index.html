@@ -70,8 +70,8 @@
     <!-- Hero Section -->
     <div class="hero">
         <div class="hero-content">
-            <h1 class="mb-3">Design Your Dream Escape</h1>
-            <p class="lead mb-4">Explore amazing travel experiences around the world with Trident Escapes</p>
+            <h1 class="mb-3" data-content="home.hero.title">Design Your Dream Escape</h1>
+            <p class="lead mb-4" data-content="home.hero.subtitle">Explore amazing travel experiences around the world with Trident Escapes</p>
             <a href="pages/book.html" class="btn btn-primary btn-lg">
                 <i class="fas fa-plane me-2"></i>Start Your Adventure
             </a>
@@ -87,8 +87,8 @@
                     <h2>Trending Destinations</h2>
                     <p class="text-muted">Explore our most popular tour destinations</p>
                 </div>
-                
-                <div class="row g-4">
+
+                <div class="row g-4" id="trending-container">
                     <div class="col-lg-6 col-xl-3">
                         <div class="card h-100">
                             <div class="card-img-wrapper position-relative">
@@ -209,8 +209,8 @@
                     <h2>Tour Packages</h2>
                     <p class="text-muted">Choose from our carefully curated tour packages</p>
                 </div>
-                
-                <div class="row g-4">
+
+                <div class="row g-4" id="home-packages-container">
                     <div class="col-lg-6 col-xl-3">
                         <div class="card price-card">
                             <div class="card-img-wrapper position-relative">
@@ -358,8 +358,8 @@
                     <h2>Our Services</h2>
                     <p class="text-muted">Complete travel solutions for unforgettable experiences</p>
                 </div>
-                
-                <div class="row g-4">
+
+                <div class="row g-4" id="services-container">
                     <div class="col-md-6 col-lg-4">
                         <div class="feature-card">
                             <div class="feature-icon mb-3">
@@ -436,8 +436,8 @@
                     <h2>Why Choose Trident Escapes?</h2>
                     <p class="text-muted">We provide the best travel experiences with exceptional service</p>
                 </div>
-                
-                <div class="row g-4">
+
+                <div class="row g-4" id="stats-container">
                     <div class="col-md-6 col-lg-3">
                         <div class="text-center">
                             <div class="mb-3">
@@ -661,5 +661,7 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Content Loader -->
+    <script src="js/content-loader.js"></script>
 </body>
 </html>
